@@ -1,0 +1,10 @@
+.btn-group{
+    position: absolute !important;
+    opacity: 1 !important;
+    background-color: #6994FE !important;
+
+}
+.btn-group-vertical{
+    position: absolute !important;
+    opacity: 1 !important;
+}
