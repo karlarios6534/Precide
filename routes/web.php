@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/api', 'App\Http\Controllers\PredictController@index');
+//funcion sin parametros
 
 Route::get('/', 'App\Http\Controllers\InicioController@index');
 //funcion sin parametros

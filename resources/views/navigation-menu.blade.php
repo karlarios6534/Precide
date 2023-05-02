@@ -18,6 +18,9 @@
                <a class="inline-flex items-center px-1 pt-1 border-b-2 border-indigo-400 text-sm font-medium leading-5 text-gray-900 focus:outline-none focus:border-indigo-700 transition" href="http://127.0.0.1:8000/patients">
                  Patients
                </a>
+               <a class="inline-flex items-center px-1 pt-1 border-b-2 border-indigo-400 text-sm font-medium leading-5 text-gray-900 focus:outline-none focus:border-indigo-700 transition" href="http://127.0.0.1:8000/api">
+                 Predict Module
+               </a>
                 </div>
             </div>
 
