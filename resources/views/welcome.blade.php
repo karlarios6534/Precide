@@ -80,12 +80,12 @@
 
 
 
-                <div >
+                <div style="margin-top: 50px">
                 <section id="hero-animated" class="hero-animated d-flex align-items-center">
     <div class="container d-flex flex-column justify-content-center align-items-center text-center position-relative" data-aos="zoom-out">
       <img src="assets/img/hero-carousel/celulas.png" class="img-fluid animated" style="width:20%">
-      <h2>Welcome to <span>Precide</span></h2>
-      <p>Et voluptate esse accusantium accusamus natus reiciendis quidem voluptates similique aut.</p>
+      <h2>Bienvenido a <span>Precide</span></h2>
+      <p>Precide es una plataforma pensada para apoyar el trabajo de los medicos.</p>
       <div class="d-flex">
         <a href="#about" class="btn-get-started scrollto">Get Started</a>
         <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
@@ -104,32 +104,32 @@
           <div class="col-xl-3 col-md-6 d-flex" data-aos="zoom-out">
             <div class="service-item position-relative">
               <div class="icon"><i class="bi bi-activity icon"></i></div>
-              <h4><a href="" class="stretched-link">Lorem Ipsum</a></h4>
-              <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+              <h4><a href="" class="stretched-link">Gestion</a></h4>
+              <p>Registra a tus pacientes y ten un control de su historial medico,</p>
             </div>
           </div><!-- End Service Item -->
 
           <div class="col-xl-3 col-md-6 d-flex" data-aos="zoom-out" data-aos-delay="200">
             <div class="service-item position-relative">
               <div class="icon"><i class="bi bi-bounding-box-circles icon"></i></div>
-              <h4><a href="" class="stretched-link">Sed ut perspici</a></h4>
-              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+              <h4><a href="" class="stretched-link">Predicciones</a></h4>
+              <p>Con machine learning como herramienta para analizar tumores.</p>
             </div>
           </div><!-- End Service Item -->
 
           <div class="col-xl-3 col-md-6 d-flex" data-aos="zoom-out" data-aos-delay="400">
             <div class="service-item position-relative">
               <div class="icon"><i class="bi bi-calendar4-week icon"></i></div>
-              <h4><a href="" class="stretched-link">Magni Dolores</a></h4>
-              <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+              <h4><a href="" class="stretched-link">Control</a></h4>
+              <p>Cuenta con una agenda para registro de consultas medicas.</p>
             </div>
           </div><!-- End Service Item -->
 
           <div class="col-xl-3 col-md-6 d-flex" data-aos="zoom-out" data-aos-delay="600">
             <div class="service-item position-relative">
               <div class="icon"><i class="bi bi-broadcast icon"></i></div>
-              <h4><a href="" class="stretched-link">Nemo Enim</a></h4>
-              <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+              <h4><a href="" class="stretched-link">Comunicaccion</a></h4>
+              <p>Mantente siempre conectado con Precide.</p>
             </div>
           </div><!-- End Service Item -->
 
@@ -143,8 +143,8 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-header">
-          <h2>About Us</h2>
-          <p>Architecto nobis eos vel nam quidem vitae temporibus voluptates qui hic deserunt iusto omnis nam voluptas asperiores sequi tenetur dolores incidunt enim voluptatem magnam cumque fuga.</p>
+          <h2>Acerca de nosotros</h2>
+          <p>Con Precide queremos ayudar a los medicos a que tengan un control en su trabajo, de una manera mas sencilla y rapida, con ayuda de la tecnologia y machine learning.</p>
         </div>
 
         <div class="row g-4 g-lg-5" data-aos="fade-up" data-aos-delay="200">
