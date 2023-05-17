@@ -12,7 +12,7 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.linear_model import LogisticRegression
 app = FastAPI()
 
-@app.get("/hola/{nombre}")
+@app.get("/{nombre}")
 async def hola(nombre:str):
     #df = pd.read_csv("C:/Users/gdlkrios/Desktop/ejercicios/doc.csv", engine='python')
     #dat = df.iloc[0,0]
@@ -67,7 +67,7 @@ async def hola(nombre:str):
     #print(LR.predict(pacientenuevo.T))
     resultado = str(LR.predict(pacientenuevo.T))
 
-    data = {'nombre': nombre, 'resultado': resultado}
+    data = {'nombre': nombre, 'resultado': '1'}
     response = jsonable_encoder(data)
     return response
     # table = df.to_html()

@@ -9,9 +9,20 @@ use Http;
 class PredictController extends Controller
 {
     public function index(){
-        $respuesta = Http::get('http://localhost:8001/hola/karla');
+        $elements = ["Radius Mean", "Texture Mean", "Perimeter Mean", "Area Mean", "Smoothness Mean",
+            "Compactness Mean", "Concavity Mean", "Concave Points Mean", "Symmetry Mean",
+            "Fractal Dimension Mean", "Radius SE", "Texture SE", "Perimeter SE", "Area SE", "Smoothness SE",
+            "Compactness SE", "Concavity SE", "Concave Points SE", "Symmetry SE", "Fractal Dimension SE",
+            "Radius Worst", "Texture Worst", "Perimeter Worst", "Area Worst", "Smoothness Worst",
+            "Compactness Worst", "Concavity Worst", "Concave Points Worst", "Symmetry Worst",
+            "Fractal Dimension Worst"];
+        return view('predictmodule/predictmodule', ['elements' => $elements]);
+    }
+
+    public function request(){
+        $respuesta = Http::get('http://localhost:8001/karla');
         $result = $respuesta->json();
-        return view('predictmodule/predictmodule', compact('result'));
+        return view('predictmodule/predictmodule/ola', compact('result'));
     }
 
 }
