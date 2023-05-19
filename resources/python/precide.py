@@ -12,11 +12,11 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.linear_model import LogisticRegression
 app = FastAPI()
 
-@app.get("/{nombre}")
-async def hola(nombre:str):
+@app.get("/{nombre}/{variables}")
+async def hola(nombre:str, variables:str):
     #df = pd.read_csv("C:/Users/gdlkrios/Desktop/ejercicios/doc.csv", engine='python')
     #dat = df.iloc[0,0]
-
+    variables = variables.split(",")
     pd.set_option('display.max_columns',None)
     df = pd.read_csv('C:/Users/Damian Wayne/Desktop/pm/data.csv')
     df.head()
@@ -62,12 +62,12 @@ async def hola(nombre:str):
 
     #predicciones
     Y_LR = LR.predict(X_test)
-
-    pacientenuevo = pd.DataFrame({"num1":[18.49,17.52,121.3,1068,0.1012,0.1317,0.1491,0.09183,0.1832,0.06697,0.7923,1.045,4.851,95.77,0.007974,0.03214,0.04435,0.01573,0.01617,0.005255,22.75,22.88,146.4,1600,0.1412,0.3089,0.3533,0.1663,0.251,0.09445]})
+    #[18.49,17.52,121.3,1068,0.1012,0.1317,0.1491,0.09183,0.1832,0.06697,0.7923,1.045,4.851,95.77,0.007974,0.03214,0.04435,0.01573,0.01617,0.005255,22.75,22.88,146.4,1600,0.1412,0.3089,0.3533,0.1663,0.251,0.09445]
+    pacientenuevo = pd.DataFrame({"num1":variables})
     #print(LR.predict(pacientenuevo.T))
     resultado = str(LR.predict(pacientenuevo.T))
 
-    data = {'nombre': nombre, 'resultado': '1'}
+    data = {'nombre': nombre, 'resultado': resultado}
     response = jsonable_encoder(data)
     return response
     # table = df.to_html()

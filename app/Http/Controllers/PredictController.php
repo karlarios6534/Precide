@@ -19,10 +19,10 @@ class PredictController extends Controller
         return view('predictmodule/predictmodule', ['elements' => $elements]);
     }
 
-    public function request(){
-        $respuesta = Http::get('http://localhost:8001/karla');
-        $result = $respuesta->json();
-        return view('predictmodule/predictmodule/ola', compact('result'));
+    public function request(Request $request){
+        $respuesta = $request->input('values');
+        
+        return($respuesta);
     }
 
 }
