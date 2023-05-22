@@ -9,14 +9,8 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
             <div class="input-group input-group-sm mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-sm">Small</span>
-                </div>
-                <input type="text" class="form-control" aria-label="Nombre" aria-describedby="inputGroup-sizing-sm">
-                </div>
-            <h1>{{$result['resultado']}}</h1>
-            <h1>{{$result['nombre']}}</h1>
-            </div>
+
+            <h1>Resultado: {{$result['resultado']}}</h1>
         </div>
     </div>
 </x-app-layout>

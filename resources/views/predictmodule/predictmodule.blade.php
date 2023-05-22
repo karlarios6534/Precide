@@ -10,16 +10,16 @@
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
             <form id="myForm" action="/api/ans" method="POST">
             @csrf
-            @foreach($elements as $index => $elemento)
+            @foreach ($elements as $clave => $valor)
             <div class="row g-3 align-items-center m-1 ">
                 <div class="col-sm-2">
-                    <label for="inputPassword6" class="col-form-label">{{$elemento}}</label>
+                    <label for="inputPassword6" class="col-form-label">{{$clave}}</label>
                 </div>
                 <div class="col-sm-2">
-                    <input type="text" name="variable{{$index}}" class="form-control bg-light rounded" aria-describedby="passwordHelpInline">
+                    <input type="text" name="variable" class="form-control bg-light rounded" aria-describedby="passwordHelpInline" required>
                 </div>
                 <div class="col-sm-6">
-                    <span id="passwordHelpInline" class="form-text">Descripción</span>
+                    <span  class="form-text">{{$valor}}</span>
                 </div>
             </div>
         @endforeach
@@ -28,29 +28,32 @@
         <button type="submit" class = "btn btn-primary" tabindex ="5">Save</button>
     </form>
     <script>
-    function submitForm() {
-        var formData = {};
+function submitForm() {
+    var formData = {};
 
-        // Obtener todos los campos del formulario
-        var formFields = document.getElementById('myForm').querySelectorAll('input');
+    // Obtener todos los campos del formulario
+    var formFields = document.getElementById('myForm').querySelectorAll('input');
 
-        // Iterar sobre los campos y agregar los valores al objeto formData
-        formFields.forEach(function(field) {
-            formData[field.name] = field.value;
-        });
+    // Iterar sobre los campos y agregar los valores al objeto formData
+    formFields.forEach(function(field) {
+        formData[field.name] = field.value;
+    });
 
-        // Obtener solo los valores del objeto formData y unirlos en una cadena separada por comas
-        var valuesString = Object.values(formData).join(',');
+    // Convertir los datos en un objeto JSON
+    var jsonData = JSON.stringify(formData);
 
-        // Crear una solicitud HTTP POST
-        var xhr = new XMLHttpRequest();
-        xhr.open('POST', '/api/ans', true);
-        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    // Crear una solicitud HTTP POST
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', '/api/ans', true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
 
-        // Enviar los valores como una cadena en el cuerpo de la solicitud
-        xhr.send(valuesString);
-    }
+    // Enviar los datos como un objeto JSON en el cuerpo de la solicitud
+    xhr.send(jsonData);
+}
+
 </script>
+
+
 
 
 
