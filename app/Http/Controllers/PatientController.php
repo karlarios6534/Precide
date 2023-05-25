@@ -42,6 +42,12 @@ class PatientController extends Controller
         $patient->code = $request->get('code');
         $patient->name = $request->get('name');
         $patient->birth_date = $request->get('birth_date');
+        $patient->gender = $request->get('gender');
+        $patient->adress = $request->get('adress');
+        $patient->phone = $request->get('phone');
+        $patient->email = $request->get('email');
+        $patient->emergency_contact = $request->get('emergency_contact');
+        $patient->allergies = $request->get('allergies');
 
         $patient->save();
         return redirect("/patients");
@@ -83,6 +89,12 @@ class PatientController extends Controller
         $patient->code = $request->get('code');
         $patient->name = $request->get('name');
         $patient->birth_date = $request->get('birth_date');
+        $patient->gender = $request->get('gender');
+        $patient->adress = $request->get('adress');
+        $patient->phone = $request->get('phone');
+        $patient->email = $request->get('email');
+        $patient->emergency_contact = $request->get('emergency_contact');
+        $patient->allergies = $request->get('allergies');
 
         $patient->save();
         return redirect("/patients");

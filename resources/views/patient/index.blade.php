@@ -9,25 +9,41 @@
        
     </x-slot>
 
-    <div class = "content" style="margin-left : 3rem; margin-right : 3rem "  >
-    <table id="patients" class = "table table-striped mt-4" style="width:100%" cellspacing="0">
+    <div class = "content" style="margin-left : 3rem; margin-right : 3rem  "  >
+    <table id="patients" class = "table table-striped mt-4" style="width: 100%; font-size: 14px;" cellspacing="0">
         <thead>
             <tr>
                 <th scope="col">Id</th>
                 <th scope="col">Code</th>
                 <th scope="col">Name</th>
                 <th scope="col">Age</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Adress</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Email</th>
+                <th scope="col">Emergency contact</th>
+                <th scope="col">Allergies</th>
                 <th scope="col">Acciones</th>
             </tr>
         </thead>
         <tbody>
             @foreach ($patients as $patient)
-
+            <?php
+            $timestampNacimiento = strtotime($patient->birth_date);
+            $timestampActual = time(); // Fecha actual en timestamp
+            $edad = date('Y', $timestampActual) - date('Y', $timestampNacimiento);
+        ?>
             <tr>
                 <td>{{$patient->id}}</td>
                 <td>{{$patient->code}}</td>
                 <td>{{$patient->name}}</td>
-                <td>{{$patient->birth_date}}</td>
+                <td>{{$edad}}</td>
+                <td>{{$patient->gender}}</td>
+                <td>{{$patient->adress}}</td>
+                <td>{{$patient->phone}}</td>
+                <td>{{$patient->email}}</td>
+                <td>{{$patient->emergency_contact}}</td>
+                <td>{{$patient->allergies}}</td>
                 <td>
                 <form action="{{ route('patients.destroy',$patient->id)}}" method = "POST">
                     @csrf

@@ -16,7 +16,7 @@
                     <label for="inputPassword6" class="col-form-label">{{$clave}}</label>
                 </div>
                 <div class="col-sm-2">
-                    <input type="text" name="variable" class="form-control bg-light rounded" aria-describedby="passwordHelpInline" required>
+                    <input type="text" name="variable{{$clave}}" class="form-control bg-light rounded" aria-describedby="passwordHelpInline" required>
                 </div>
                 <div class="col-sm-6">
                     <span  class="form-text">{{$valor}}</span>

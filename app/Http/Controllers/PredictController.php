@@ -51,23 +51,6 @@ class PredictController extends Controller
         $values = array_values($jsonData); // Obtener solo los valores del array
         array_shift($values); // Eliminar el primer valor del array
 
-        //evaluar que no haya datos null
-        $containsNull = false;
-        foreach ($values as $value) {
-            if ($value === null) {
-                $containsNull = true;
-                break;
-            }
-        }
-
-        if ($containsNull) {
-            echo 'El JSON contiene valores nulos.';
-        } else {
-            echo 'El JSON no contiene valores nulos.';
-        }
-
-
-
         $valuesString = implode(',', $values); // Concatenar los valores con comas
         
         $response = Http::get("http://localhost:8001/{{$valuesString}}");

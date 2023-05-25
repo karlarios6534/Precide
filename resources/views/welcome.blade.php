@@ -54,7 +54,7 @@
         <style>
             body {
                 font-family: 'Nunito', sans-serif;
-                background-image: url("https://i.postimg.cc/rw5kNPJB/fondo.png");
+                background-color: #F2F3F5;
                 background-size: cover;
             }
         </style>
@@ -86,8 +86,8 @@
       <h2>Bienvenido a <span>Precide</span></h2>
       <p>Precide es una plataforma pensada para apoyar el trabajo de los medicos.</p>
       <div class="d-flex">
-        <a href="#about" class="btn-get-started scrollto">Get Started</a>
-        <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
+        <a href="#about" class="btn-get-started scrollto" style="background-color: #DE4980">Get Started</a>
+        <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle" ></i><span>Watch Video</span></a>
       </div>
     </div>
   </section>
