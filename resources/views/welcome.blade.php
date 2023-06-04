@@ -84,9 +84,9 @@
     <div class="container d-flex flex-column justify-content-center align-items-center text-center position-relative" data-aos="zoom-out">
       <img src="assets/img/hero-carousel/celulas.png" class="img-fluid animated" style="width:20%">
       <h2>Bienvenido a <span>Precide</span></h2>
-      <p>Precide es una plataforma pensada para apoyar el trabajo de los medicos.</p>
+      <p>Precide es una plataforma de control de historial y seguimeinto de pacientes con riesgo de cancer de mama.</p>
       <div class="d-flex">
-        <a href="#about" class="btn-get-started scrollto" style="background-color: #DE4980">Get Started</a>
+        <a href="{{ url('/login') }}" class="btn-get-started scrollto" style="background-color: #DE4980">Get Started</a>
         <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle" ></i><span>Watch Video</span></a>
       </div>
     </div>
@@ -112,7 +112,7 @@
             <div class="service-item position-relative">
               <div class="icon"><i class="bi bi-bounding-box-circles icon"></i></div>
               <h4><a href="" class="stretched-link">Predicciones</a></h4>
-              <p>Con machine learning como herramienta para analizar tumores.</p>
+              <p>Con machine learning como herramienta para analizar tumores con riesgo de cancer de mama. </p>
             </div>
           </div><!-- End Service Item -->
 
@@ -120,7 +120,7 @@
             <div class="service-item position-relative">
               <div class="icon"><i class="bi bi-calendar4-week icon"></i></div>
               <h4><a href="" class="stretched-link">Control</a></h4>
-              <p>Cuenta con una agenda para registro de consultas medicas.</p>
+              <p>Cuenta con un historial de tus pacientes.</p>
             </div>
           </div><!-- End Service Item -->
 
@@ -150,18 +150,17 @@
 
           <div class="col-lg-5">
             <div class="about-img">
-              <img src="assets/img/about.jpg" class="img-fluid" alt="">
+              <img src="assets/img/about.png" class="img-fluid" alt="">
             </div>
           </div>
 
           <div class="col-lg-7">
-            <h3 class="pt-0 pt-lg-5">Neque officiis dolore maiores et exercitationem quae est seda lidera pat claero</h3>
+            <h3 class="pt-0 pt-lg-5">Tener un historial de los avances del tumor de un paciente con riesgo de cancer de mama es crucial.</h3>
 
             <!-- Tabs -->
             <ul class="nav nav-pills mb-3">
-              <li><a class="nav-link active" data-bs-toggle="pill" href="#tab1">Saepe fuga</a></li>
-              <li><a class="nav-link" data-bs-toggle="pill" href="#tab2">Voluptates</a></li>
-              <li><a class="nav-link" data-bs-toggle="pill" href="#tab3">Corrupti</a></li>
+              <li><a class="nav-link active" data-bs-toggle="pill" href="#tab1">Caracteristicas para tomar en cuenta un tumor en el seno</a></li>
+              <li><a class="nav-link" data-bs-toggle="pill" href="#tab2">Importancia historica</a></li>
             </ul><!-- End Tabs -->
 
             <!-- Tab Content -->
@@ -169,75 +168,35 @@
 
               <div class="tab-pane fade show active" id="tab1">
 
-                <p class="fst-italic">Consequuntur inventore voluptates consequatur aut vel et. Eos doloribus expedita. Sapiente atque consequatur minima nihil quae aspernatur quo suscipit voluptatem.</p>
+                <div class="d-flex align-items-center mt-4">
+                  <i class="bi bi-check2"></i>
+                  <h4>Tamaño del tumor</h4>
+                </div>
+                <p> Los tumores malignos tienden a ser de mayor tamaño en comparación con los tumores benignos que son más pequeños.</p>
 
                 <div class="d-flex align-items-center mt-4">
                   <i class="bi bi-check2"></i>
-                  <h4>Repudiandae rerum velit modi et officia quasi facilis</h4>
+                  <h4>Forma y contorno del tumo</h4>
                 </div>
-                <p>Laborum omnis voluptates voluptas qui sit aliquam blanditiis. Sapiente minima commodi dolorum non eveniet magni quaerat nemo et.</p>
+                <p>Los tumores malignos tienen formas irregulares y contornos asimétricos, mientras que los tumores benignos son más redondeados y regulares.</p>
 
                 <div class="d-flex align-items-center mt-4">
                   <i class="bi bi-check2"></i>
-                  <h4>Incidunt non veritatis illum ea ut nisi</h4>
+                  <h4>Características de los borde</h4>
                 </div>
-                <p>Non quod totam minus repellendus autem sint velit. Rerum debitis facere soluta tenetur. Iure molestiae assumenda sunt qui inventore eligendi voluptates nisi at. Dolorem quo tempora. Quia et perferendis.</p>
-
-                <div class="d-flex align-items-center mt-4">
-                  <i class="bi bi-check2"></i>
-                  <h4>Omnis ab quia nemo dignissimos rem eum quos..</h4>
-                </div>
-                <p>Eius alias aut cupiditate. Dolor voluptates animi ut blanditiis quos nam. Magnam officia aut ut alias quo explicabo ullam esse. Sunt magnam et dolorem eaque magnam odit enim quaerat. Vero error error voluptatem eum.</p>
+                <p>La presencia de bordes o márgenes difusos, festoneados o espiculados en un tumor puede ser indicativo de malignidad. Los tumores benignos suelen tener bordes lisos y bien definidos.</p>
 
               </div><!-- End Tab 1 Content -->
 
               <div class="tab-pane fade show" id="tab2">
 
-                <p class="fst-italic">Consequuntur inventore voluptates consequatur aut vel et. Eos doloribus expedita. Sapiente atque consequatur minima nihil quae aspernatur quo suscipit voluptatem.</p>
-
                 <div class="d-flex align-items-center mt-4">
                   <i class="bi bi-check2"></i>
-                  <h4>Repudiandae rerum velit modi et officia quasi facilis</h4>
+                  <h4>La detección temprana de tumores malignos de cáncer de mama ha sido de suma importancia históricamente.</h4>
                 </div>
-                <p>Laborum omnis voluptates voluptas qui sit aliquam blanditiis. Sapiente minima commodi dolorum non eveniet magni quaerat nemo et.</p>
-
-                <div class="d-flex align-items-center mt-4">
-                  <i class="bi bi-check2"></i>
-                  <h4>Incidunt non veritatis illum ea ut nisi</h4>
-                </div>
-                <p>Non quod totam minus repellendus autem sint velit. Rerum debitis facere soluta tenetur. Iure molestiae assumenda sunt qui inventore eligendi voluptates nisi at. Dolorem quo tempora. Quia et perferendis.</p>
-
-                <div class="d-flex align-items-center mt-4">
-                  <i class="bi bi-check2"></i>
-                  <h4>Omnis ab quia nemo dignissimos rem eum quos..</h4>
-                </div>
-                <p>Eius alias aut cupiditate. Dolor voluptates animi ut blanditiis quos nam. Magnam officia aut ut alias quo explicabo ullam esse. Sunt magnam et dolorem eaque magnam odit enim quaerat. Vero error error voluptatem eum.</p>
+                <p>Según estudios, la detección temprana puede aumentar las tasas de supervivencia en un 90%. En países con programas de detección bien establecidos, la tasa de supervivencia a 5 años es del 85-99%. Además, la mamografía ha demostrado reducir la mortalidad por cáncer de mama en un 20-40%. Estas cifras resaltan la importancia de la detección temprana para salvar vidas y combatir el cáncer de mama de manera efectiva.</p>
 
               </div><!-- End Tab 2 Content -->
-
-              <div class="tab-pane fade show" id="tab3">
-
-                <p class="fst-italic">Consequuntur inventore voluptates consequatur aut vel et. Eos doloribus expedita. Sapiente atque consequatur minima nihil quae aspernatur quo suscipit voluptatem.</p>
-
-                <div class="d-flex align-items-center mt-4">
-                  <i class="bi bi-check2"></i>
-                  <h4>Repudiandae rerum velit modi et officia quasi facilis</h4>
-                </div>
-                <p>Laborum omnis voluptates voluptas qui sit aliquam blanditiis. Sapiente minima commodi dolorum non eveniet magni quaerat nemo et.</p>
-
-                <div class="d-flex align-items-center mt-4">
-                  <i class="bi bi-check2"></i>
-                  <h4>Incidunt non veritatis illum ea ut nisi</h4>
-                </div>
-                <p>Non quod totam minus repellendus autem sint velit. Rerum debitis facere soluta tenetur. Iure molestiae assumenda sunt qui inventore eligendi voluptates nisi at. Dolorem quo tempora. Quia et perferendis.</p>
-
-                <div class="d-flex align-items-center mt-4">
-                  <i class="bi bi-check2"></i>
-                  <h4>Omnis ab quia nemo dignissimos rem eum quos..</h4>
-                </div>
-                <p>Eius alias aut cupiditate. Dolor voluptates animi ut blanditiis quos nam. Magnam officia aut ut alias quo explicabo ullam esse. Sunt magnam et dolorem eaque magnam odit enim quaerat. Vero error error voluptatem eum.</p>
-
-              </div><!-- End Tab 3 Content -->
 
             </div>
 
@@ -248,12 +207,6 @@
       </div>
     </section><!-- End About Section -->
 
-    
-
-   
-
-    
-
     <!-- ======= Features Section ======= -->
     <section id="features" class="features">
       <div class="container" data-aos="fade-up">
@@ -263,44 +216,29 @@
           <li class="nav-item col-6 col-md-4 col-lg-2">
             <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#tab-1">
               <i class="bi bi-binoculars color-cyan"></i>
-              <h4>Modinest</h4>
+              <h4>Dashboard</h4>
             </a>
           </li><!-- End Tab 1 Nav -->
 
           <li class="nav-item col-6 col-md-4 col-lg-2">
             <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-2">
               <i class="bi bi-box-seam color-indigo"></i>
-              <h4>Undaesenti</h4>
+              <h4>Pacientes</h4>
             </a>
           </li><!-- End Tab 2 Nav -->
 
           <li class="nav-item col-6 col-md-4 col-lg-2">
             <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-3">
               <i class="bi bi-brightness-high color-teal"></i>
-              <h4>Pariatur</h4>
+              <h4>Prediccion</h4>
             </a>
           </li><!-- End Tab 3 Nav -->
 
           <li class="nav-item col-6 col-md-4 col-lg-2">
             <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-4">
               <i class="bi bi-command color-red"></i>
-              <h4>Nostrum</h4>
+              <h4>Historial</h4>
             </a>
-          </li><!-- End Tab 4 Nav -->
-
-          <li class="nav-item col-6 col-md-4 col-lg-2">
-            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-5">
-              <i class="bi bi-easel color-blue"></i>
-              <h4>Adipiscing</h4>
-            </a>
-          </li><!-- End Tab 5 Nav -->
-
-          <li class="nav-item col-6 col-md-4 col-lg-2">
-            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-6">
-              <i class="bi bi-map color-orange"></i>
-              <h4>Reprehit</h4>
-            </a>
-          </li><!-- End Tab 6 Nav -->
 
         </ul>
 
