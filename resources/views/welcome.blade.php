@@ -215,28 +215,28 @@
 
           <li class="nav-item col-6 col-md-4 col-lg-2">
             <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#tab-1">
-              <i class="bi bi-binoculars color-cyan"></i>
+              <i class="bi bi-speedometer color-cyan"></i>
               <h4>Dashboard</h4>
             </a>
           </li><!-- End Tab 1 Nav -->
 
           <li class="nav-item col-6 col-md-4 col-lg-2">
             <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-2">
-              <i class="bi bi-box-seam color-indigo"></i>
+              <i class="bi bi-database color-indigo"></i>
               <h4>Pacientes</h4>
             </a>
           </li><!-- End Tab 2 Nav -->
 
           <li class="nav-item col-6 col-md-4 col-lg-2">
             <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-3">
-              <i class="bi bi-brightness-high color-teal"></i>
+              <i class="bi bi-filetype-ai color-teal"></i>
               <h4>Prediccion</h4>
             </a>
           </li><!-- End Tab 3 Nav -->
 
           <li class="nav-item col-6 col-md-4 col-lg-2">
             <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-4">
-              <i class="bi bi-command color-red"></i>
+              <i class="bi bi-clock-history color-red"></i>
               <h4>Historial</h4>
             </a>
 
@@ -247,20 +247,17 @@
           <div class="tab-pane active show" id="tab-1">
             <div class="row gy-4">
               <div class="col-lg-8 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="100">
-                <h3>Modinest</h3>
+                <h3>Dashboard</h3>
                 <p class="fst-italic">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                  magna aliqua.
+                  En este apartado podras ver de manera grafica los detalles en general de tu cuenta (pacientes, historial, predicciones).
                 </p>
                 <ul>
-                  <li><i class="bi bi-check-circle-fill"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                  <li><i class="bi bi-check-circle-fill"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                  <li><i class="bi bi-check-circle-fill"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Visualización de datos clara y atractiva para facilitar el análisis.</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Toma de decisiones informadas basadas en métricas y estadísticas en tiempo real.</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Monitoreo en tiempo real para identificar problemas y tomar acciones correctivas de manera oportuna.</li>
                 </ul>
                 <p>
-                  Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                  velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                  culpa qui officia deserunt mollit anim id est laborum
+                Este modulo ofrecen visualización efectiva de datos, toma de decisiones informadas y monitoreo en tiempo real, mejorando la eficiencia y rendimiento en diferentes áreas empresariales.
                 </p>
               </div>
               <div class="col-lg-4 order-1 order-lg-2 text-center" data-aos="fade-up" data-aos-delay="200">
@@ -272,21 +269,16 @@
           <div class="tab-pane" id="tab-2">
             <div class="row gy-4">
               <div class="col-lg-8 order-2 order-lg-1">
-                <h3>Undaesenti</h3>
-                <p>
-                  Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                  velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                  culpa qui officia deserunt mollit anim id est laborum
-                </p>
+                <h3>Pacientes</h3>
                 <p class="fst-italic">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                  magna aliqua.
+                En este apartado podras hacer un registro de tus pacientes para asi poderles dar seguimiento, asi como poder 
+                editar, y eliminar registros en tiempo real, asi como una agíl busqueda de estos.
                 </p>
                 <ul>
-                  <li><i class="bi bi-check-circle-fill"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                  <li><i class="bi bi-check-circle-fill"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                  <li><i class="bi bi-check-circle-fill"></i> Provident mollitia neque rerum asperiores dolores quos qui a. Ipsum neque dolor voluptate nisi sed.</li>
-                  <li><i class="bi bi-check-circle-fill"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
+                  <li><i class="bi bi-check-circle-fill"></i>Gestión eficiente de pacientes: Registro, búsqueda, actualización y eliminación ágil de datos para una organización efectiva.</li>
+                  <li><i class="bi bi-check-circle-fill"></i>Acceso rápido a información relevante: Datos completos y actualizados disponibles para tomar decisiones médicas informadas.</li>
+                  <li><i class="bi bi-check-circle-fill"></i>Registro completo y actualizado: Historias clínicas, diagnósticos y tratamientos registrados para una atención precisa.</li>
+                  <li><i class="bi bi-check-circle-fill"></i>Coordinación mejorada del equipo médico: Compartir y actualizar información de forma colaborativa para una atención de calidad.</li>
                 </ul>
               </div>
               <div class="col-lg-4 order-1 order-lg-2 text-center">
@@ -298,21 +290,16 @@
           <div class="tab-pane" id="tab-3">
             <div class="row gy-4">
               <div class="col-lg-8 order-2 order-lg-1">
-                <h3>Pariatur</h3>
+                <h3>Prediccion</h3>
                 <p>
-                  Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                  velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                  culpa qui officia deserunt mollit anim id est laborum
+                El modulo de predicción de Precide mide la malignidad de tumores en la mama con datos especificos de este, contar con este modulo brinda beneficios clave para el diagnóstico.
                 </p>
                 <ul>
-                  <li><i class="bi bi-check-circle-fill"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                  <li><i class="bi bi-check-circle-fill"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                  <li><i class="bi bi-check-circle-fill"></i> Provident mollitia neque rerum asperiores dolores quos qui a. Ipsum neque dolor voluptate nisi sed.</li>
+                  <li><i class="bi bi-check-circle-fill"></i>Soporte en decisiones: Evaluación objetiva para respaldar el diagnóstico.</li>
+                  <li><i class="bi bi-check-circle-fill"></i>Agilidad en evaluaciones: Rápida estimación inicial sobre la naturaleza del tumor.</li>
+                  <li><i class="bi bi-check-circle-fill"></i>Optimización de recursos: Asignación eficiente de recursos médicos según la probabilidad de malignidad.</li>
+                  <li><i class="bi bi-check-circle-fill"></i>Mejora en la comunicación: Explicación clara y toma de decisiones compartida con los pacientes.</li>
                 </ul>
-                <p class="fst-italic">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                  magna aliqua.
-                </p>
               </div>
               <div class="col-lg-4 order-1 order-lg-2 text-center">
                 <img src="assets/img/features-3.svg" alt="" class="img-fluid">
@@ -323,20 +310,15 @@
           <div class="tab-pane" id="tab-4">
             <div class="row gy-4">
               <div class="col-lg-8 order-2 order-lg-1">
-                <h3>Nostrum</h3>
-                <p>
-                  Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                  velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                  culpa qui officia deserunt mollit anim id est laborum
-                </p>
+                <h3>Historial</h3>
                 <p class="fst-italic">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                  magna aliqua.
+                Contar con un historial para cada paciente mejora la atención médica, decisiones clínicas, coordinación entre profesionales,
+                comunicación con el paciente y análisis de datos para mejorar resultados de salud.
                 </p>
                 <ul>
-                  <li><i class="bi bi-check-circle-fill"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                  <li><i class="bi bi-check-circle-fill"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                  <li><i class="bi bi-check-circle-fill"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Mejora en la continuidad de la atención médica, permitiendo un seguimiento completo del historial del paciente.</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Facilita la toma de decisiones clínicas informadas al contar con información completa y actualizada</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Mejora la eficiencia y coordinación entre profesionales de la salud al tener acceso compartido a los registros del paciente.</li>
                 </ul>
               </div>
               <div class="col-lg-4 order-1 order-lg-2 text-center">
@@ -344,62 +326,7 @@
               </div>
             </div>
           </div><!-- End Tab Content 4 -->
-
-          <div class="tab-pane" id="tab-5">
-            <div class="row gy-4">
-              <div class="col-lg-8 order-2 order-lg-1">
-                <h3>Adipiscing</h3>
-                <p>
-                  Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                  velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                  culpa qui officia deserunt mollit anim id est laborum
-                </p>
-                <p class="fst-italic">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                  magna aliqua.
-                </p>
-                <ul>
-                  <li><i class="bi bi-check-circle-fill"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                  <li><i class="bi bi-check-circle-fill"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                  <li><i class="bi bi-check-circle-fill"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
-                </ul>
-              </div>
-              <div class="col-lg-4 order-1 order-lg-2 text-center">
-                <img src="assets/img/features-5.svg" alt="" class="img-fluid">
-              </div>
-            </div>
-          </div><!-- End Tab Content 5 -->
-
-          <div class="tab-pane" id="tab-6">
-            <div class="row gy-4">
-              <div class="col-lg-8 order-2 order-lg-1">
-                <h3>Reprehit</h3>
-                <p>
-                  Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                  velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                  culpa qui officia deserunt mollit anim id est laborum
-                </p>
-                <p class="fst-italic">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                  magna aliqua.
-                </p>
-                <ul>
-                  <li><i class="bi bi-check-circle-fill"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                  <li><i class="bi bi-check-circle-fill"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                  <li><i class="bi bi-check-circle-fill"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
-                </ul>
-              </div>
-              <div class="col-lg-4 order-1 order-lg-2 text-center">
-                <img src="assets/img/features-6.svg" alt="" class="img-fluid">
-              </div>
-            </div>
-          </div><!-- End Tab Content 6 -->
-
-        </div>
-
-      </div>
     </section><!-- End Features Section -->
-
 
 
     <!-- ======= Contact Section ======= -->
@@ -408,9 +335,12 @@
 
         <div class="section-header">
           <h2>Contact Us</h2>
-          <p>Ea vitae aspernatur deserunt voluptatem impedit deserunt magnam occaecati dssumenda quas ut ad dolores adipisci aliquam.</p>
+          <p>Puedes contactarnos por nuestras redes sociales para saber mas de Precide!.</p>
+          <br>
+        <a href="mailto:karla.rios6534@alumnos.udg.mx">
+            <i class="bi bi-envelope-fill color-cyan">karla.rios6534@alumons.udg.mx</i>
+        </a>
         </div>
-
       </div>
     </section><!-- End Contact Section -->
 

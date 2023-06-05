@@ -14,31 +14,24 @@ app = FastAPI()
 
 @app.get("/{variables}")
 async def hola(variables:str):
-    #df = pd.read_csv("C:/Users/gdlkrios/Desktop/ejercicios/doc.csv", engine='python')
-    #dat = df.iloc[0,0]
+
     variables=variables.replace('{','').replace('}','')
     variables = list(map(float, variables.split(",")))
     pd.set_option('display.max_columns',None)
     df = pd.read_csv('C:/Users/Damian Wayne/Desktop/pm/data.csv')
-    df.head()
 
     #eliminacion de columnas que no necesitaremos
     df=df.drop(['id' , 'Unnamed: 32'] , axis=1)
 
     #transformar la clase en variable numerica
-
     le = LabelEncoder()
 
     df['diagnosis'] = le.fit_transform(df['diagnosis'])
-    df.head()
-
 
     scaler = StandardScaler()
 
     scaler.fit(df)
     scaled_data = scaler.transform(df)
-
-
 
     pca = PCA(n_components=2)
     pca.fit(scaled_data)
@@ -48,13 +41,8 @@ async def hola(variables:str):
     X = df.drop('diagnosis', axis = 1)
     y = df['diagnosis']
 
-
-
     #split data
-
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 42)
-    print('Shape of train set ', X_train.shape)
-    print('Shape of test set ', X_test.shape)
 
     LR = LogisticRegression()
 
@@ -65,29 +53,27 @@ async def hola(variables:str):
     Y_LR = LR.predict(X_test)
     #[18.49,17.52,121.3,1068,0.1012,0.1317,0.1491,0.09183,0.1832,0.06697,0.7923,1.045,4.851,95.77,0.007974,0.03214,0.04435,0.01573,0.01617,0.005255,22.75,22.88,146.4,1600,0.1412,0.3089,0.3533,0.1663,0.251,0.09445]
     pacientenuevo = pd.DataFrame({"num1":variables})
-    #print(LR.predict(pacientenuevo.T))
+
+    resultado = LR.predict(pacientenuevo.T)
+
+    y_pred_proba = LR.predict_proba(pacientenuevo.T)
+
+    res = resultado.item()
+    # Convertir el elemento en un entero
+    res = int(res)
+    # Obtener el porcentaje de probabilidad de la veracidad del resultado
+    if res == 1:
+        veracidad_probabilidad = y_pred_proba[0][1]  # Porcentaje de probabilidad de la clase positiva
+    elif res == 0:
+        veracidad_probabilidad = y_pred_proba[0][0] # Porcentaje de probabilidad de la clase negativa
+    else:
+        print('Error')
+
     resultado = str(LR.predict(pacientenuevo.T))
 
-    data = {'resultado': resultado}
+    data = {'resultado': res, 'porcentaje':veracidad_probabilidad}
     response = jsonable_encoder(data)
     return response
-    # table = df.to_html()
-    # suma = 'hole'
-    # titulo="titulo de pagina"
-    # html = f'''
-    #             <!DOCTYPE html>
-    #             <html>
-    #                 <head>
-    #                     <title>{{titulo}}</title>
-    #                 </head>
-    #                 <body>
-    #                     <table>{{table}}</table>
-    #                 </body>
-    #             </html>
-    #         '''
-    # html = html.format(suma=suma, titulo=titulo, table=table)
-
-    #return HTMLResponse(content=html, status_code=200)
  
 if __name__ == "__main__":
     import uvicorn
