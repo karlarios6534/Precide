@@ -4,11 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Patient;
 use Http;
 
 class PredictController extends Controller
 {
     public function index(){
+        $patients= Patient::all();
 
         $elements = array("Radius Mean"=>"mean of distances from center to points on the perimete",
         "Texture Mean"=>"standard deviation of gray-scale values",
@@ -40,7 +42,7 @@ class PredictController extends Controller
         "Concave Points Worst"=>"",
         "Symmetry Worst"=>"",
         "Fractal Dimension Worst"=>"");
-        return view('predictmodule/predictmodule', ['elements' => $elements]);
+        return view('predictmodule/predictmodule', ['elements' => $elements, 'patients'=> $patients]);
     }
 
     public function request(Request $request)

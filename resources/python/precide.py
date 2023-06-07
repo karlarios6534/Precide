@@ -64,8 +64,10 @@ async def hola(variables:str):
     # Obtener el porcentaje de probabilidad de la veracidad del resultado
     if res == 1:
         veracidad_probabilidad = y_pred_proba[0][1]  # Porcentaje de probabilidad de la clase positiva
+        res='Maligno'
     elif res == 0:
         veracidad_probabilidad = y_pred_proba[0][0] # Porcentaje de probabilidad de la clase negativa
+        res='Benigno'
     else:
         print('Error')
 

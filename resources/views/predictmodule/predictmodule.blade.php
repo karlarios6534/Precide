@@ -9,6 +9,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
             <form id="myForm" action="/api/ans" method="POST">
+
             @csrf
             @foreach ($elements as $clave => $valor)
             <div class="row g-3 align-items-center m-1 ">
@@ -23,9 +24,12 @@
                 </div>
             </div>
         @endforeach
-            </div>
+</select>
+        <div class="text-center">
+        <button type="submit" class = "btn btn-primary " tabindex ="5" style="background-color: #DE4980;">Iniciar</button>
+</div>    
+    </div>
         </div>
-        <button type="submit" class = "btn btn-primary" tabindex ="5">Save</button>
     </form>
     <script>
 function submitForm() {

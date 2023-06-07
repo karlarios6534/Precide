@@ -86,8 +86,8 @@
       <h2>Bienvenido a <span>Precide</span></h2>
       <p>Precide es una plataforma de control de historial y seguimeinto de pacientes con riesgo de cancer de mama.</p>
       <div class="d-flex">
-        <a href="{{ url('/login') }}" class="btn-get-started scrollto" style="background-color: #DE4980">Get Started</a>
-        <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle" ></i><span>Watch Video</span></a>
+        <a href="{{ url('/login') }}" class="btn-get-started scrollto" style="background-color: #DE4980">Comenzar!</a>
+        <a href="https://www.youtube.com/watch?v=7Ilu033ydSw" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle" ></i><span>Ver video</span></a>
       </div>
     </div>
   </section>
