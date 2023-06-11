@@ -20,6 +20,21 @@
             </div>
 
             <div class="mt-4">
+                <x-jet-label for="birth_date" value="{{ __('Birth date') }}" />
+                <x-jet-input id="birth_date" class="block mt-1 w-full" type="date" name="birth_date" :value="old('birth_date')" required />
+            </div>
+
+            <div class="mt-4">
+                <x-jet-label for="phone" value="{{ __('Phone') }}" />
+                <x-jet-input id="phone" class="block mt-1 w-full" type="text" name="phone" :value="old('phone')" required />
+            </div>
+
+            <div class="mt-4">
+                <x-jet-label for="emergency_phone" value="{{ __('Emergency phone') }}" />
+                <x-jet-input id="emergency_phone" class="block mt-1 w-full" type="text" name="emergency_phone" :value="old('emergency_phone')" required />
+            </div>
+
+            <div class="mt-4">
                 <x-jet-label for="password" value="{{ __('Contraseña') }}" />
                 <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
             </div>

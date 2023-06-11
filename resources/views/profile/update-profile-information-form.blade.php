@@ -81,6 +81,23 @@
                 @endif
             @endif
         </div>
+        <div class="col-span-6 sm:col-span-4">
+            <x-jet-label for="birth_date" value="{{ __('Birth_date') }}" />
+            <x-jet-input id="birth_date" type="date" class="mt-1 block w-full" wire:model.defer="state.birth_date" autocomplete="birth_date" />
+            <x-jet-input-error for="birth_date" class="mt-2" />
+        </div>
+
+        <div class="col-span-6 sm:col-span-4">
+            <x-jet-label for="phone" value="{{ __('Phone') }}" />
+            <x-jet-input id="phone" type="text" class="mt-1 block w-full" wire:model.defer="state.phone" autocomplete="phone" />
+            <x-jet-input-error for="phone" class="mt-2" />
+        </div>
+        
+        <div class="col-span-6 sm:col-span-4">
+            <x-jet-label for="emergency_phone" value="{{ __('Emergency phone') }}" />
+            <x-jet-input id="emergency_phone" type="text" class="mt-1 block w-full" wire:model.defer="state.emergency_phone" autocomplete="emergency_phone" />
+            <x-jet-input-error for="phone" class="mt-2" />
+        </div>
     </x-slot>
 
     <x-slot name="actions">

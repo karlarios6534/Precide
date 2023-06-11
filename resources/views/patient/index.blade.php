@@ -9,7 +9,7 @@
        
     </x-slot>
 
-    <div class = "content" style="margin-left : 3rem; margin-right : 3rem  "  >
+    <div class = "content" style="margin-left : 3rem; margin-right : 3rem">
     <table id="patients" class = "table table-striped mt-4" style="width: 100%; font-size: 14px;" cellspacing="0">
         <thead>
             <tr>

@@ -4,33 +4,35 @@
         {{ __('Predict') }}
         </h2>
     </x-slot>
-
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 mt-4">
+            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg ">
             <form id="myForm" action="/api/ans" method="POST">
-
             @csrf
             @foreach ($elements as $clave => $valor)
-            <div class="row g-3 align-items-center m-1 ">
-                <div class="col-sm-2">
+            <div class="row g-3 align-items-center m-1 " style="width:50%">
+                <div class="col-sm-5">
                     <label for="inputPassword6" class="col-form-label">{{$clave}}</label>
                 </div>
-                <div class="col-sm-2">
+                <div class="col-sm-5 d-flex align-items-center">
                     <input type="text" name="variable{{$clave}}" class="form-control bg-light rounded" aria-describedby="passwordHelpInline" required>
-                </div>
-                <div class="col-sm-6">
-                    <span  class="form-text">{{$valor}}</span>
+                    <button type="button" class="btn btn-primary btn-sm ml-3" style="background-color: #DE4980; border-color: #DE4980;" data-toggle="popover" title="{{$valor}}">
+                        <i class="bi bi-question-circle-fill"></i>
+                    </button>
                 </div>
             </div>
         @endforeach
-</select>
         <div class="text-center">
-        <button type="submit" class = "btn btn-primary " tabindex ="5" style="background-color: #DE4980;">Iniciar</button>
-</div>    
-    </div>
-        </div>
-    </form>
+        <button type="submit" class = "btn btn-primary " tabindex ="5" style="background-color: #DE4980; border-color: #DE4980;">Iniciar</button>
+        </form>
+    </div>    
+</div>
+
+    <!-- Inicializar los tooltips utilizando JavaScript -->
+    <script>
+    $(document).ready(function(){
+        $('[data-toggle="popover"]').popover();
+    });
+    </script>  
     <script>
 function submitForm() {
     var formData = {};
