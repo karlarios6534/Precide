@@ -18,6 +18,11 @@ return new class extends Migration
             $table->string('code');
             $table->string('name');
             $table->date('birth_date');
+            $table->string('adress');
+            $table->string('phone');
+            $table->string('emergency_contact');
+            $table->string('email');
+            $table->string('allergies');
             $table->timestamps();
         });
     }

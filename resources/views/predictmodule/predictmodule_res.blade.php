@@ -5,9 +5,11 @@
         </h2>
     </x-slot>
 
-    <div class="py-12">
+    <div class="py-12 d-flex justify-content-center">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+            <form method="POST" action="/registro_res">
+            @csrf
             <table id="result" class = "table table-striped mt-4 m-5" style="width: 50%; font-size: 16px;" cellspacing="0">
             <tbody>
                 <tr>
@@ -16,14 +18,34 @@
                 </tr>
                 <tr>
                 <td>Resultado</td>
-                <td>{{$result['resultado']}}</td>
+                <td id="resultado">
+                    <input style="  background-color: transparent;
+                                    border: none;
+                                    outline: none;
+                                    pointer-events: none;"
+                    type="text" name="resultado" value="{{$result['resultado']}}" readonly>
+                </td>
                 </tr>
                 <tr>
                 <td>Porcentaje de probabilidad de veracidad</td>
-                <td>{{$result['porcentaje']}}</td>
+                <td id="porcentaje">
+                <input style="  background-color: transparent;
+                                    border: none;
+                                    outline: none;
+                                    pointer-events: none;"
+                    type="text" name="porcentaje" value="{{$result['porcentaje']}}" readonly>
+                </td>
                 </tr>
             </tbody>
-            </table>   
+            <tfoot>
+            <!-- Resto de los campos del formulario -->
+            <tr>
+                <td colspan="2"><button action="/registro_res" type="submit" method="POST" class = "btn btn-primary " tabindex ="5" style="background-color: #DE4980; border-color: #DE4980;">Asociar resultados a paciente</button></td>
+            </tr>
+            </form>
+
+            </tfoot>
+            </table>  
             <div class="row">
   <div class="col-sm-6 m-5">
     <div class="card">
@@ -42,6 +64,29 @@
       </div>
     </div>
   </div> 
+</div>
         </div>
     </div>
+    <script>
+unction submitForm() {
+    var resultado = document.getElementById('resultado').value;
+    var porcentaje = document.getElementById('porcentaje').value;
+
+    var objeto = {
+        'resultado': resultado,
+        'porcentaje': porcentaje
+    };
+
+    // Convertir los datos en un objeto JSON
+    var jsonData = JSON.stringify(objeto);
+
+    // Crear una solicitud HTTP POST
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', '/registro_res', true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.send(jsonData);
+}
+
+
+</script>
 </x-app-layout>

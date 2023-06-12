@@ -17,6 +17,12 @@ async def hola(variables:str):
 
     variables=variables.replace('{','').replace('}','')
     variables = list(map(float, variables.split(",")))
+    new_variables = []
+    indexes=[0,3,6,9,12,15,18,21,24,27,1,4,7,10,13,16,19,22,25,28,2,5,8,11,14,17,20,23,26,29]
+    new_variables=[]
+    for idx in indexes:
+        new_variables.append(variables[idx])
+    variables=new_variables
     pd.set_option('display.max_columns',None)
     df = pd.read_csv('C:/Users/Damian Wayne/Desktop/pm/data.csv')
 

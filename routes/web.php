@@ -16,6 +16,8 @@ Route::get('/api', 'App\Http\Controllers\PredictController@index');
 //funcion sin parametros
 Route::post('/api/ans', 'App\Http\Controllers\PredictController@request');
 
+Route::post('/registro_res', 'App\Http\Controllers\PredictController@register');
+
 Route::get('/', 'App\Http\Controllers\InicioController@index');
 //funcion sin parametros
 Route::get('/prueba', function () {
@@ -60,6 +62,8 @@ Route::middleware([
 });
 //vista crud pacientes
 Route::resource('patients','App\Http\Controllers\PatientController');
+
+Route::resource('record','App\Http\Controllers\Record');
 
 /*Route::middleware([
     'auth:sanctum',
