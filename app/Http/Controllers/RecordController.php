@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Record;
 
-class Record extends Controller
+class RecordController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +15,8 @@ class Record extends Controller
      */
     public function index()
     {
-        //
+        $records= Record::all();
+        return view('records.index')->with('records',$records);
     }
 
     /**

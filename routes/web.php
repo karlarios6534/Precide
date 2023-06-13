@@ -63,7 +63,7 @@ Route::middleware([
 //vista crud pacientes
 Route::resource('patients','App\Http\Controllers\PatientController');
 
-Route::resource('record','App\Http\Controllers\Record');
+Route::resource('record','App\Http\Controllers\RecordController');
 
 /*Route::middleware([
     'auth:sanctum',
