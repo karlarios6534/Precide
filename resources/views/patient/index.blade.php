@@ -17,7 +17,6 @@
                 <th scope="col">Code</th>
                 <th scope="col">Name</th>
                 <th scope="col">Age</th>
-                <th scope="col">Gender</th>
                 <th scope="col">Adress</th>
                 <th scope="col">Phone</th>
                 <th scope="col">Email</th>
@@ -38,7 +37,6 @@
                 <td>{{$patient->code}}</td>
                 <td>{{$patient->name}}</td>
                 <td>{{$edad}}</td>
-                <td>{{$patient->gender}}</td>
                 <td>{{$patient->adress}}</td>
                 <td>{{$patient->phone}}</td>
                 <td>{{$patient->email}}</td>

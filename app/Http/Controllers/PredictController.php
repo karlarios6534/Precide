@@ -5,10 +5,16 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Patient;
+use App\Models\Record;
 use Http;
 
 class PredictController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth'); // Verificar la sesión antes de acceder a los métodos del controlador
+    }
+    
     public function index(){
 
         $elements = [
@@ -99,6 +105,28 @@ class PredictController extends Controller
         $patients= Patient::all();
 
         return view('predictmodule/predictmodule_register',['resultado' => $resultado, 'porcentaje' => $porcentaje, 'patients' => $patients]);
+    }
+
+    public function save(Request $request)
+    {
+      $record = new Record();
+      $record->user_id = $request->get('user');
+      $record->patient_id = $request->get('patient');
+      $record->prediccion = $request->get('resultado');
+      $record->veracidad = $request->get('porcentaje');
+      $record->comentario = $request->get('comentario');
+      $record->date = date('Y-m-d'); 
+
+      $record->save();
+
+      $startOfWeek = now()->startOfWeek(); // Obtener el inicio de la semana actual
+      $endOfWeek = now()->endOfWeek(); // Obtener el final de la semana actual
+      
+      $records = Record::with('patient','user')->get();
+      
+      // Filtrar los registros por fecha dentro del rango de la semana actual
+      
+      return view('records.index')->with('records', $records);
     }
 
 }

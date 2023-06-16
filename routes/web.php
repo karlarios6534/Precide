@@ -16,6 +16,8 @@ Route::get('/api', 'App\Http\Controllers\PredictController@index');
 //funcion sin parametros
 Route::post('/api/ans', 'App\Http\Controllers\PredictController@request');
 
+Route::post('/api/register', 'App\Http\Controllers\PredictController@save');
+
 Route::post('/registro_res', 'App\Http\Controllers\PredictController@register');
 
 Route::get('/', 'App\Http\Controllers\InicioController@index');

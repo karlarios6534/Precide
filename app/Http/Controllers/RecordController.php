@@ -13,10 +13,22 @@ class RecordController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+        $this->middleware('auth'); // Verificar la sesión antes de acceder a los métodos del controlador
+    }
+    
     public function index()
     {
-        $records= Record::all();
-        return view('records.index')->with('records',$records);
+        $startOfWeek = now()->startOfWeek(); // Obtener el inicio de la semana actual
+        $endOfWeek = now()->endOfWeek(); // Obtener el final de la semana actual
+        
+        $records = Record::with('patient','user')->get();
+        
+        // Filtrar los registros por fecha dentro del rango de la semana actual
+        
+        return view('records.index')->with('records', $records);
     }
 
     /**

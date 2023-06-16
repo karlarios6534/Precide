@@ -14,12 +14,19 @@ class PatientController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+         $this->middleware('auth'); // Verificar la sesión antes de acceder a los métodos del controlador
+    }
+
     public function index()
     {
         $patients= Patient::all();
         return view('patient.index')->with('patients',$patients);
     }
 
+        
     /**
      * Show the form for creating a new resource.
      *

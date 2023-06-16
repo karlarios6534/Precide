@@ -8,12 +8,13 @@
     <div class="py-12 d-flex justify-content-center">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-            <form id="myForm" action="/api/ans" method="POST">
+            <form id="myForm" action="/api/register" method="POST">
             @csrf
             <div class="row g-3 align-items-center m-1">
+
                 <div class="col-sm-6 m-4" style="background-color:#F2F3F5; border-radius: 10px; width:80%">
                 <div class="col-sm-3">
-                    <label for="inputPassword6" class="col-form-label">Resultado</label>
+                <label for="inputPassword6" class="col-form-label">Resultado</label>
                 </div>
                 <div class="col-sm-5 d-flex align-items-center">
                     <input type="text" name="resultado" class="form-control bg-light rounded" value="{{$resultado}}" aria-describedby="passwordHelpInline" readonly>
@@ -47,8 +48,8 @@
                 </select>
                 </div>
                 
-                
-
+                <input style="height:1rem; background-color: transparent; border: none; color: transparent;" type="text" name="user" value="{{ Auth::user()->id }}" class="form-control bg-light rounded" aria-describedby="passwordHelpInline">
+                <button type="submit" class = "btn btn-primary " tabindex ="5" style="background-color: #DE4980; border-color: #DE4980; width:10%">Guardar</button>
             </div>
         </div>
     </div>
