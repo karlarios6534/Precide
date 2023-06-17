@@ -24,9 +24,14 @@ class RecordController extends Controller
         $startOfWeek = now()->startOfWeek(); // Obtener el inicio de la semana actual
         $endOfWeek = now()->endOfWeek(); // Obtener el final de la semana actual
         
-        $records = Record::with('patient','user')->get();
-        
-        // Filtrar los registros por fecha dentro del rango de la semana actual
+        $records = Record::with('patient', 'user')
+            ->whereBetween('date', [$startOfWeek, $endOfWeek])
+            ->whereIn('id', function ($query) {
+                $query->select(\DB::raw('MAX(id)'))
+                    ->from('records')
+                    ->groupBy('patient_id');
+            })
+            ->get();
         
         return view('records.index')->with('records', $records);
     }
@@ -71,9 +76,17 @@ class RecordController extends Controller
      */
     public function edit($id)
     {
-        //
+        $record= Record::find($id);
+        return view('records.edit')->with("record",$record);
     }
 
+    public function details($id)
+    {
+        $records = Record::with('patient', 'user')
+        ->where('patient_id', $id)->get();
+    
+        return view('records.details')->with('records', $records);
+    }
     /**
      * Update the specified resource in storage.
      *
@@ -83,7 +96,12 @@ class RecordController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $record = Record::find($id);
+        $record->comentario = $request->get('comentario');
+        $record->date = $request->get('fecha');
+
+        $record->save();
+        return redirect("/record");
     }
 
     /**
@@ -94,6 +112,13 @@ class RecordController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $records = Record::where('patient_id', $id)->delete();
+        return redirect("/record");
+    }
+    public function destroy_id($id)
+    {
+        $record = Record::find($id);
+        $record->delete();
+        return redirect("/record");
     }
 }

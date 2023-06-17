@@ -3,12 +3,10 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Historial') }}
         </h2>
-        <a href = "records/create" class="btn btn-info"><img src="{{URL::asset('img/plus.png')}}" alt="create"width = "10rem"></a>
-       
     </x-slot>
 
     <div class = "content" style="margin-left : 3rem; margin-right : 3rem">
-    <table id="records" class = "table table-striped mt-4" style="width: 100%; font-size: 14px;" cellspacing="0">
+    <table id="records" class = "table table-striped mt-4" style="width: 100%; font-size: 15px;" cellspacing="0">
         <thead>
             <tr>
                 <th scope="col">Id</th>
@@ -31,11 +29,11 @@
                 <td>{{$record->veracidad}}</td>
                 <td>{{$record->comentario}}</td>
                 <td>{{$record->date}}</td>
-                <td>
-                <form action="{{ route('record.destroy',$record->id)}}" method = "POST">
+                <td style="width:15%">
+                <form action="{{ route('record.destroy',$record->patient->id)}}" method = "POST">
                     @csrf
                     @method('DELETE')
-                <a href="/record/{{$record->id}}/edit"class = "btn btn-info">Edit</a>
+                <a href="/record/{{$record->patient->id}}/details"class = "btn btn-info">Detalles</a>
                 <button class = "btn btn-danger">Delete</button>
                 </form>
                 </td>

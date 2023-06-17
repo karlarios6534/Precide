@@ -21,10 +21,6 @@
         <input id="birth_date" name="birth_date" class="form-control" tabindex="3" type="text" value="{{$patient->birth_date}}">
     </div>
     <div class = "mb-3">
-        <label for="" class = "form-label">Gender</label>
-        <input id="gender" name="gender" class="form-control" tabindex="3" type="text" value="{{$patient->gender}}">
-    </div>
-    <div class = "mb-3">
         <label for="" class = "form-label">Adress</label>
         <input id="adress" name="adress" class="form-control" tabindex="3" type="text" value="{{$patient->adress}}">
     </div>

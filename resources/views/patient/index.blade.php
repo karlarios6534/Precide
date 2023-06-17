@@ -10,7 +10,7 @@
     </x-slot>
 
     <div class = "content" style="margin-left : 3rem; margin-right : 3rem">
-    <table id="patients" class = "table table-striped mt-4" style="width: 100%; font-size: 14px;" cellspacing="0">
+    <table id="patients" class = "table table-striped mt-4" style="width: 100%; font-size: 15px;" cellspacing="0">
         <thead>
             <tr>
                 <th scope="col">Id</th>
@@ -42,7 +42,7 @@
                 <td>{{$patient->email}}</td>
                 <td>{{$patient->emergency_contact}}</td>
                 <td>{{$patient->allergies}}</td>
-                <td>
+                <td style="width:15%">
                 <form action="{{ route('patients.destroy',$patient->id)}}" method = "POST">
                     @csrf
                     @method('DELETE')

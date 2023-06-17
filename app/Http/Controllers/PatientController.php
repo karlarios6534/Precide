@@ -49,7 +49,6 @@ class PatientController extends Controller
         $patient->code = $request->get('code');
         $patient->name = $request->get('name');
         $patient->birth_date = $request->get('birth_date');
-        $patient->gender = $request->get('gender');
         $patient->adress = $request->get('adress');
         $patient->phone = $request->get('phone');
         $patient->email = $request->get('email');
@@ -96,7 +95,6 @@ class PatientController extends Controller
         $patient->code = $request->get('code');
         $patient->name = $request->get('name');
         $patient->birth_date = $request->get('birth_date');
-        $patient->gender = $request->get('gender');
         $patient->adress = $request->get('adress');
         $patient->phone = $request->get('phone');
         $patient->email = $request->get('email');
