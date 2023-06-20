@@ -25,7 +25,6 @@ class RecordController extends Controller
         $endOfWeek = now()->endOfWeek(); // Obtener el final de la semana actual
         
         $records = Record::with('patient', 'user')
-            ->whereBetween('date', [$startOfWeek, $endOfWeek])
             ->whereIn('id', function ($query) {
                 $query->select(\DB::raw('MAX(id)'))
                     ->from('records')

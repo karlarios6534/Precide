@@ -5,81 +5,94 @@
         </h2>
     </x-slot>
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-            <html>
-  <script src="https://d3js.org/d3.v4.min.js"></script>
-  <script src=
-"https://cdn.jsdelivr.net/npm/billboard.js/dist/billboard.min.js"></script>
-  <link
-    rel="stylesheet"
-    href=
-"https://cdn.jsdelivr.net/npm/billboard.js/dist/billboard.min.css"
-  />
-  <link
-    rel=
-"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
-    type="text/css"
-  />
-  
-  <script src=
-"https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js">
-  </script>
-  <script src=
-"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js">
-  </script>
-  
-  <script src=
-"https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.1/Chart.min.js">
-  </script>
-  
-  <style>
-    body {
-      text-align: center;
-      color: green;
-    }
-    h2 {
-      text-align: center;
-      font-family: "Verdana", sans-serif;
-      font-size: 40px;
-    }
-  </style>
-  <body>
-    <div class="col-xs-12 text-center">
-      <h2>Donut Chart</h2>
-    </div>
-  
-    <div id="donut-chart"></div>
-  
-    <script>
-      var chart = bb.generate({
-        data: {
-          columns: [
-            ["Blue", 2],
-            ["orange", 4],
-            ["green", 3],
-          ],
-          type: "donut",
-          onclick: function (d, i) {
-            console.log("onclick", d, i);
-          },
-          onover: function (d, i) {
-            console.log("onover", d, i);
-          },
-          onout: function (d, i) {
-            console.log("onout", d, i);
-          },
-        },
-        donut: {
-          title: "70",
-        },
-        bindto: "#donut-chart",
-      });
-    </script>
-  </body>
-</html>
+    <div class="content" style="margin-left: 3rem; margin-right: 3rem">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Gráfica de Médicos</h4>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="doctorsChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Gráfica de Pacientes</h4>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="patientsChart"></canvas>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+
+    <!-- ScriptJS para cargar los datos y crear las gráficas -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Obtener datos de los médicos
+            var usersData = {!! json_encode($usersData) !!};
+
+            // Configurar gráfica de médicos
+            var doctorsChart = new Chart(document.getElementById('doctorsChart'), {
+                type: 'bar',
+                data: {
+                    labels: usersData.labels,
+                    datasets: [{
+                        label: 'Cantidad de Médicos',
+                        data: usersData.values,
+                        backgroundColor: 'rgba(75, 192, 192, 0.5)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            precision: 0
+                        }
+                    }
+                }
+            });
+
+            // Obtener datos de los pacientes
+            var patientsData = {!! json_encode($patientsData) !!};
+
+            // Configurar gráfica de pacientes
+            var patientsChart = new Chart(document.getElementById('patientsChart'), {
+                type: 'pie',
+                data: {
+                    labels: patientsData.labels,
+                    datasets: [{
+                        data: patientsData.values,
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.5)',
+                            'rgba(54, 162, 235, 0.5)',
+                            'rgba(255, 206, 86, 0.5)',
+                            'rgba(75, 192, 192, 0.5)',
+                            'rgba(153, 102, 255, 0.5)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true
+                }
+            });
+        });
+    </script>
 </x-app-layout>
+

@@ -22,6 +22,8 @@ Route::post('/registro_res', 'App\Http\Controllers\PredictController@register');
 
 Route::get('/', 'App\Http\Controllers\InicioController@index');
 
+Route::get('/dashboard', 'App\Http\Controllers\DashController@index');
+
 Route::get('/record/{id}/details', 'App\Http\Controllers\RecordController@details')->name('record.details');
 
 Route::post('/record/destroy_id/{id}', 'App\Http\Controllers\RecordController@destroy_id')->name('record.destroy_id');

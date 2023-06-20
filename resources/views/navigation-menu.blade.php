@@ -4,7 +4,7 @@
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
-                <div class="shrink-0 flex items-center" >
+                <div class=" shrink-0 flex items-center" >
                     <a href="{{ route('dashboard') }}">
                     <img class="logo" src="{{URL::asset('img/celulas.png')}}" alt="logo" style="width: 10%; ">
                     </a>

@@ -46,7 +46,6 @@ class PatientController extends Controller
     public function store(Request $request)
     {
         $patient = new Patient();
-        $patient->code = $request->get('code');
         $patient->name = $request->get('name');
         $patient->birth_date = $request->get('birth_date');
         $patient->adress = $request->get('adress');
@@ -92,7 +91,6 @@ class PatientController extends Controller
     public function update(Request $request, $id)
     {
         $patient = Patient::find($id);
-        $patient->code = $request->get('code');
         $patient->name = $request->get('name');
         $patient->birth_date = $request->get('birth_date');
         $patient->adress = $request->get('adress');

@@ -29,10 +29,10 @@
 
     <x-slot name="actions">
         <x-jet-action-message class="mr-3" on="saved">
-            {{ __('Guardar') }}
+            {{ __('Guardado') }}
         </x-jet-action-message>
 
-        <x-jet-button>
+        <x-jet-button style="background-color: #DE4980; border-color: #DE4980;">
             {{ __('Guardar') }}
         </x-jet-button>
     </x-slot>
