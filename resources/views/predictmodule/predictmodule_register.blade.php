@@ -8,7 +8,7 @@
     <div class="py-12 d-flex justify-content-center">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-            <form id="myForm" action="/api/register" method="POST">
+            <form id="myForm" action="{{ route('apiregister')}}" method="POST">
             @csrf
             <div class="row g-3 align-items-center m-1">
 
@@ -35,7 +35,7 @@
                 <label for="inputPassword6" class="col-form-label">Comentarios</label>
                 </div>
                 <div class="col-sm-15 d-flex align-items-center">
-                    <input style="height:10rem" type="text" name="comentario" class="form-control bg-light rounded" aria-describedby="passwordHelpInline">
+                    <input style="height:10rem" type="text" name="comentario" pattern="^[a-zA-Z0-9]{1,190}$" class="form-control bg-light rounded" aria-describedby="passwordHelpInline">
                 </div>
                 </div>
 

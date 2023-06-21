@@ -14,7 +14,7 @@
             </thead>
             <tr>
                 <td>
-            <form id="myForm" action="/api/ans" method="POST">
+            <form id="myForm" action="{{ route('apians')}}" method="POST">
             @csrf
             <div class="row g-3 align-items-center m-1" style="width: 200%;">
                 <div class="d-flex flex-wrap">
@@ -26,7 +26,7 @@
                                     <label for="inputPassword6" class="col-form-label">{{$key}}</label>
                                 </div>
                                 <div class="col-sm-5 d-flex align-items-center">
-                                    <input type="text" name="variable{{$key}}" class="form-control bg-light rounded" aria-describedby="passwordHelpInline" required>
+                                    <input type="text" name="variable{{$key}}" pattern="^[0-9.]{1,10}$" class="form-control bg-light rounded" aria-describedby="passwordHelpInline" required>
                                     <button type="button" class="btn btn-primary btn-sm ml-3" style="background-color: #DE4980; border-color: #DE4980;" data-toggle="popover" title="{{$value}}">
                                         <i class="bi bi-question-circle-fill"></i>
                                     </button>
@@ -94,7 +94,7 @@ function submitForm() {
 
     // Crear una solicitud HTTP POST
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', '/api/ans', true);
+    xhr.open('POST', "{{ route('apians')}}", true);
     xhr.setRequestHeader('Content-Type', 'application/json');
 
     // Enviar los datos como un objeto JSON en el cuerpo de la solicitud

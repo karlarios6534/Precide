@@ -12,17 +12,15 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/api', 'App\Http\Controllers\PredictController@index');
+Route::get('/api', 'App\Http\Controllers\PredictController@index')->name('api');
 //funcion sin parametros
-Route::post('/api/ans', 'App\Http\Controllers\PredictController@request');
+Route::post('/api/ans', 'App\Http\Controllers\PredictController@request')->name('apians');
 
-Route::post('/api/register', 'App\Http\Controllers\PredictController@save');
+Route::post('/api/register', 'App\Http\Controllers\PredictController@save')->name('apiregister');
 
-Route::post('/registro_res', 'App\Http\Controllers\PredictController@register');
+Route::post('/registro_res', 'App\Http\Controllers\PredictController@register')->name('regitrores');
 
 Route::get('/', 'App\Http\Controllers\InicioController@index');
-
-Route::get('/dashboard', 'App\Http\Controllers\DashController@index');
 
 Route::get('/record/{id}/details', 'App\Http\Controllers\RecordController@details')->name('record.details');
 
@@ -65,14 +63,29 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
-    Route::get('dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::get('dashboard', 'App\Http\Controllers\DashController@index')->name('dashboard');
 });
-//vista crud pacientes
-Route::resource('patients','App\Http\Controllers\PatientController');
 
-Route::resource('record','App\Http\Controllers\RecordController');
+//vista crud pacientes
+Route::resource('patients', 'App\Http\Controllers\PatientController')->names([
+    'index' => 'patients',
+    'create' => 'patients.create',
+    'store' => 'patients.store',
+    'show' => 'patients.show',
+    'edit' => 'patients.edit',
+    'update' => 'patients.update',
+    'destroy' => 'patients.destroy',
+]);
+
+Route::resource('record','App\Http\Controllers\RecordController')->names([
+    'index' => 'record',
+    'create' => 'record.create',
+    'store' => 'record.store',
+    'show' => 'record.show',
+    'edit' => 'record.edit',
+    'update' => 'record.update',
+    'destroy' => 'record.destroy',
+]);
 
 /*Route::middleware([
     'auth:sanctum',

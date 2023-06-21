@@ -12,34 +12,51 @@ class DashController extends Controller
 {
     public function index()
     {
-        $usersData = [
-            'labels' => [],
-            'values' => []
-        ];
-
-        $patientsData = [
-            'labels' => [],
-            'values' => []
-        ];
-        $recordsData = [
-            'labels' => [],
-            'values' => []
-        ];
-
-        $users = User::all();
+        $pacientes = Patient::all();
+        $medicos = User::all();
         $records = Record::all();
-        foreach ($users as $user) {
-            $usersData['labels'][] = $user->name;
-            $usersData['values'][] = $user->name;
+    
+        // Obtener datos para los gráficos
+        $pacientesData = [
+            'labels' => $pacientes->pluck('name')->toArray(),
+            'values' => []
+        ];
+        
+        $medicosData = [
+            'labels' => $medicos->pluck('name')->toArray(),
+            'values' => []
+        ];
+
+        $recordsData = [
+            'labels' => $records->pluck('date')->toArray(),
+            'values' => []
+        ];
+        
+        foreach ($pacientesData['labels'] as $label) {
+            $paciente = $pacientes->where('name', $label)->first();
+            $pacientesData['values'][] = $records->where('patient_id', $paciente->id)->count();
+        }
+        
+        foreach ($medicosData['labels'] as $label) {
+            $medico = $medicos->where('name', $label)->first();
+            $medicosData['values'][] = $records->where('user_id', $medico->id)->count();
         }
 
-        $patients = Patient::all();
-        foreach ($patients as $patient) {
-            $patientsData['labels'][] = $patient->name;
-            $patientsData['values'][] = $patient->name;
-        }
+        foreach ($recordsData['labels'] as $label) {
+            $recordsData['values'][] = $records->where('date', $label)->count();
+        }      
 
-        return view('dashboard', compact('usersData', 'patientsData'));
+        $prediccionesData = [
+            'labels' => ['Benigno', 'Maligno'],
+            'values' => [
+                $records->where('prediccion', 'Benigno')->count(),
+                $records->where('prediccion', 'Maligno')->count()
+            ]
+        ];
+        
+    
+        return view('dashboard', compact('pacientesData', 'medicosData', 'prediccionesData', 'recordsData'));
     }
+    
 }
 

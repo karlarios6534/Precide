@@ -13,7 +13,7 @@
                     @method('PUT')
                     <div class = "mb-3">
                         <label for="" class = "form-label">Nombre</label>
-                        <input id="name" name="name" class="form-control bg-light rounded" tabindex="2" type="text" value="{{$patient->name}}" required>
+                        <input id="name" name="name" pattern="^[A-Za-z]{1,190}$" class="form-control bg-light rounded" tabindex="2" type="text" value="{{$patient->name}}" required>
                     </div>
                     <div class = "mb-3">
                         <label for="" class = "form-label">Fecha de nacimiento</label>
@@ -21,23 +21,23 @@
                     </div>
                     <div class = "mb-3">
                         <label for="" class = "form-label">Direccion</label>
-                        <input id="adress" name="adress" class="form-control bg-light rounded" tabindex="3" type="text" value="{{$patient->adress}}" required>
+                        <input id="adress" name="adress" pattern="^.{1,99}$" class="form-control bg-light rounded" tabindex="3" type="text" value="{{$patient->adress}}" required>
                     </div>
                     <div class = "mb-3">
                         <label for="" class = "form-label">Telefono</label>
-                        <input id="phone" name="phone" class="form-control bg-light rounded" tabindex="3" type="text" value="{{$patient->phone}}" required>
+                        <input id="phone" name="phone" pattern="^\d{1,15}$" class="form-control bg-light rounded" tabindex="3" type="text" value="{{$patient->phone}}" required>
                     </div>
                     <div class = "mb-3">
                         <label for="" class = "form-label">Email</label>
-                        <input id="email" name="email" class="form-control bg-light rounded" tabindex="3" type="email" value="{{$patient->email}}" required>
+                        <input id="email" name="email"  pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" class="form-control bg-light rounded" tabindex="3" type="email" value="{{$patient->email}}" required>
                     </div>
                     <div class = "mb-3">
                         <label for="" class = "form-label">Contacto de emergencia</label>
-                        <input id="emergency_contact" name="emergency_contact" class="form-control bg-light rounded" tabindex="3" type="text" value="{{$patient->emergency_contact}}" required>
+                        <input id="emergency_contact" name="emergency_contact" pattern="^\d{1,15}$" class="form-control bg-light rounded" tabindex="3" type="text" value="{{$patient->emergency_contact}}" required>
                     </div>
                     <div class = "mb-3">
                         <label for="" class = "form-label">Alergias</label>
-                        <input id="allergies" name="allergies" class="form-control bg-light rounded"" tabindex="3" type="text" value="{{$patient->allergies}}" required>
+                        <input id="allergies" name="allergies" pattern="^[a-zA-Z0-9]{1,100}$" class="form-control bg-light rounded"" tabindex="3" type="text" value="{{$patient->allergies}}" required>
                     </div>
                     <div class="text-center">
                     <a href="/patients" class = "btn btn-secondary" tabindex ="4">Cancel</a>

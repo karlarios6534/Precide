@@ -8,7 +8,7 @@
     <div class="py-12 d-flex justify-content-center">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-            <form method="POST" action="/registro_res">
+            <form method="POST" action="{{ route('regitrores') }}">
             @csrf
             <table id="result" class = "table table-striped mt-4 m-5" style="width: 50%; font-size: 16px;" cellspacing="0">
             <tbody>
@@ -40,7 +40,7 @@
             <tfoot>
             <!-- Resto de los campos del formulario -->
             <tr>
-                <td colspan="2"><button action="/registro_res" type="submit" method="POST" class = "btn btn-primary " tabindex ="5" style="background-color: #DE4980; border-color: #DE4980;">Asociar resultados a paciente</button></td>
+                <td colspan="2"><button action="{{ route('regitrores') }}" type="submit" method="POST" class = "btn btn-primary " tabindex ="5" style="background-color: #DE4980; border-color: #DE4980;">Asociar resultados a paciente</button></td>
             </tr>
             </form>
 
@@ -82,7 +82,7 @@ unction submitForm() {
 
     // Crear una solicitud HTTP POST
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', '/registro_res', true);
+    xhr.open('POST', "{{ route('regitrores') }}", true);
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.send(jsonData);
 }
