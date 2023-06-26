@@ -83,7 +83,8 @@ class PredictController extends Controller
 
         $valuesString = implode(',', $values); // Concatenar los valores con comas
         
-        $response = Http::get("http://localhost:8001/{{$valuesString}}");
+        $response = Http::timeout(300)->withoutVerifying()->get("https://precide.onrender.com/" . $valuesString);
+
         // Hacer algo con la cadena de valores concatenados
         // ...
         

@@ -9,8 +9,8 @@
         @if (!$records->isEmpty())
         <br>
         <div style="background-color: white; display: inline-block;">
-            <h1 class="display-8 text-primary mb-4">Paciente: {{$records[0]->patient->name}}</h1>
-            <h1 class="display-8 text-success">Medico: {{$records[0]->user->name}}</h1>
+            <h1 id="patientname" class="display-8 text-primary mb-4">Paciente {{$records[0]->patient->name}}</h1>
+            <h1 id="username" class="display-8 text-success">Medico {{$records[0]->user->name}}</h1>
         </div>
         @endif
 
@@ -43,4 +43,84 @@
             </tbody>
         </table>
     </div>
+    
+<!-- ScriptJS to use datatables properties -->
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.2/js/dataTables.bootstrap5.min.js"></script>
+<!-- ScriptJS to use datatables buttons properties -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.13.2/js/dataTables.bootstrap5.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/2.3.4/js/dataTables.buttons.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/2.3.4/js/buttons.bootstrap5.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/2.3.4/js/buttons.html5.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/2.3.4/js/buttons.print.min.js"></script>
+<!--ScriptJS to use iconns from fontawesome-->
+<script src="https://kit.fontawesome.com/0395bf88e1.js" crossorigin="anonymous"></script>
+<!--ScriptJS to make datatable-->
+
+<!-- ScriptJS to use datatables properties -->
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.2/js/dataTables.bootstrap5.min.js"></script>
+<!-- ScriptJS to use datatables buttons properties -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.13.2/js/dataTables.bootstrap5.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/2.3.4/js/dataTables.buttons.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/2.3.4/js/buttons.bootstrap5.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/2.3.4/js/buttons.html5.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/2.3.4/js/buttons.print.min.js"></script>
+<!--ScriptJS to use iconns from fontawesome-->
+<script src="https://kit.fontawesome.com/0395bf88e1.js" crossorigin="anonymous"></script>
+<!--ScriptJS to make datatable-->
+<script>
+$(document).ready(function () {
+    var patientName = document.getElementById('patientname').textContent;
+    var username = document.getElementById('username').textContent;
+
+    $('#records').DataTable({
+        "lengthMenu" : [[5,10,50,-1],[5,10,50,"All"]],
+        "responsive" : true,
+        "dom" : 'Bfrtilp',
+        "searching": true,
+        "buttons" : [
+            {
+                extend: 'excelHtml5',
+                text: '<i class="fas fa-file-excel "></i>',
+                titleAttr: 'Export to excel',
+                filename: patientName,
+                exportOptions: {
+                    columns: ':not(:last-child)' // Especifica las columnas que deseas exportar (índices basados en cero)
+                }
+            },
+            {
+                extend: 'pdfHtml5',
+                text: '<i class="fas fa-file-pdf"></i>',
+                titleAttr: 'Export to pdf',
+                filename: patientName,
+                exportOptions: {
+                    columns: ':not(:last-child)' // Especifica las columnas que deseas exportar (índices basados en cero)
+                }
+            },
+            {
+                extend: 'print',
+                text: '<i class="fa fa-print" ></i>',
+                titleAttr: 'Print',
+                filename: patientName,
+                exportOptions: {
+                    columns: ':not(:last-child)' // Especifica las columnas que deseas exportar (índices basados en cero)
+                }
+            }
+            
+        ]
+    });
+});
+</script>
+
 </x-app-layout>

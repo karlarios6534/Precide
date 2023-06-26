@@ -4,7 +4,6 @@
             {{ __('Historial') }}
         </h2>
     </x-slot>
-
     <div class = "content" style="margin-left : 3rem; margin-right : 3rem">
     <table id="records" class = "table table-striped mt-4" style="width: 100%; font-size: 15px;" cellspacing="0">
         <thead>
@@ -64,23 +63,36 @@
 $(document).ready(function () {
     $('#records').DataTable({
         "lengthMenu" : [[5,10,50,-1],[5,10,50,"All"]],
-        "responsive" : "true",
+        "responsive" : true,
         "dom" : 'Bfrtilp',
+        "searching": true,
         "buttons" : [
             {
                 extend: 'excelHtml5',
                 text: '<i class="fas fa-file-excel "></i>',
-                titleAttr: 'Export to excel'
+                titleAttr: 'Export to excel',
+                filename: 'Registros_precide',
+                exportOptions: {
+                    columns: ':not(:last-child)' // Especifica las columnas que deseas exportar (índices basados en cero)
+                }
             },
             {
                 extend: 'pdfHtml5',
                 text: '<i class="fas fa-file-pdf"></i>',
-                titleAttr: 'Export to pdf'
+                titleAttr: 'Export to pdf',
+                filename: 'Registros_precide',
+                exportOptions: {
+                    columns: ':not(:last-child)' // Especifica las columnas que deseas exportar (índices basados en cero)
+                }
             },
             {
                 extend: 'print',
                 text: '<i class="fa fa-print" ></i>',
-                titleAttr: 'Print'
+                titleAttr: 'Print',
+                filename: 'Registros_precide',
+                exportOptions: {
+                    columns: ':not(:last-child)' // Especifica las columnas que deseas exportar (índices basados en cero)
+                }
             }
             
         ]

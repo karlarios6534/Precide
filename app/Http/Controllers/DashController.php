@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Patient;
 use App\Models\Record;
+use Carbon\Carbon;
 
 class DashController extends Controller
 {
@@ -15,7 +16,14 @@ class DashController extends Controller
         $pacientes = Patient::all();
         $medicos = User::all();
         $records = Record::all();
-    
+        
+        $totalPacientes = Patient::count();
+
+// Número de pacientes registrados esta semana
+        $inicioSemana = Carbon::now()->startOfWeek();
+        $finSemana = Carbon::now()->endOfWeek();
+        $pacientesRegistradosSemana = Patient::whereBetween('created_at', [$inicioSemana, $finSemana])->count();
+
         // Obtener datos para los gráficos
         $pacientesData = [
             'labels' => $pacientes->pluck('name')->toArray(),
@@ -55,7 +63,7 @@ class DashController extends Controller
         ];
         
     
-        return view('dashboard', compact('pacientesData', 'medicosData', 'prediccionesData', 'recordsData'));
+        return view('dashboard', compact('pacientesData', 'medicosData', 'prediccionesData', 'recordsData', 'totalPacientes', 'pacientesRegistradosSemana'));
     }
     
 }

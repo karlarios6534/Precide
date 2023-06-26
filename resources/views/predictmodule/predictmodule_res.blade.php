@@ -68,7 +68,7 @@
         </div>
     </div>
     <script>
-unction submitForm() {
+function submitForm() {
     var resultado = document.getElementById('resultado').value;
     var porcentaje = document.getElementById('porcentaje').value;
 

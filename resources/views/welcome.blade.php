@@ -87,7 +87,7 @@
       <p>Precide es una plataforma de control de historial y seguimeinto de pacientes con riesgo de cancer de mama.</p>
       <div class="d-flex">
         <a href="{{ url('/login') }}" class="btn-get-started scrollto" style="background-color: #DE4980">Comenzar!</a>
-        <a href="https://www.youtube.com/watch?v=7Ilu033ydSw" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle" ></i><span>Ver video</span></a>
+        <a href="https://www.youtube.com/watch?v=99llpcsco6g" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle" ></i><span>Ver video</span></a>
       </div>
     </div>
   </section>
@@ -261,7 +261,7 @@
                 </p>
               </div>
               <div class="col-lg-4 order-1 order-lg-2 text-center" data-aos="fade-up" data-aos-delay="200">
-                <img src="assets/img/features-1.svg" alt="" class="img-fluid">
+                <img src="assets/img/dash.png" alt="" class="img-fluid">
               </div>
             </div>
           </div><!-- End Tab Content 1 -->
@@ -282,7 +282,7 @@
                 </ul>
               </div>
               <div class="col-lg-4 order-1 order-lg-2 text-center">
-                <img src="assets/img/features-2.svg" alt="" class="img-fluid">
+                <img src="assets/img/patient.png" alt="" class="img-fluid">
               </div>
             </div>
           </div><!-- End Tab Content 2 -->
@@ -302,7 +302,7 @@
                 </ul>
               </div>
               <div class="col-lg-4 order-1 order-lg-2 text-center">
-                <img src="assets/img/features-3.svg" alt="" class="img-fluid">
+                <img src="assets/img/ml.png" alt="" class="img-fluid">
               </div>
             </div>
           </div><!-- End Tab Content 3 -->
@@ -322,7 +322,7 @@
                 </ul>
               </div>
               <div class="col-lg-4 order-1 order-lg-2 text-center">
-                <img src="assets/img/features-4.svg" alt="" class="img-fluid">
+                <img src="assets/img/record.png" alt="" class="img-fluid">
               </div>
             </div>
           </div><!-- End Tab Content 4 -->

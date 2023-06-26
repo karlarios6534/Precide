@@ -4,11 +4,12 @@
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
-                <div class=" shrink-0 flex items-center" >
+                <div class="shrink-0 flex items-center" style="width:30%">
                     <a href="{{ route('dashboard') }}">
-                    <img class="logo" src="{{URL::asset('img/celulas.png')}}" alt="logo" style="width: 10%; ">
+                    <img class="logo img-fluid max-height-100" src="{{URL::asset('img/celulas.png')}}" style="width:20%" alt="logo">
                     </a>
                 </div>
+
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">

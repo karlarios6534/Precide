@@ -35,12 +35,12 @@
                 <label for="inputPassword6" class="col-form-label">Comentarios</label>
                 </div>
                 <div class="col-sm-15 d-flex align-items-center">
-                    <input style="height:10rem" type="text" name="comentario" pattern="^[a-zA-Z0-9]{1,190}$" class="form-control bg-light rounded" aria-describedby="passwordHelpInline">
+                    <input style="height:10rem" type="text" name="comentario" class="form-control bg-light rounded" aria-describedby="passwordHelpInline" maxlength="499" required>
                 </div>
                 </div>
 
                 <div class="col-sm-6 m-4" style="background-color:#F2F3F5; border-radius: 10px; width:80%">
-                <select name="patient" id="patient" class="form-select" > 
+                <select name="patient" id="patient" class="form-select" required> 
                     <option value="">Selecciona paciente</option>
                     @foreach ($patients as $patient)
                         <option value="{{ $patient->id }}">{{ $patient->id }} {{ $patient->name }}</option>

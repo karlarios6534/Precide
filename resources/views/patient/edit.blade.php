@@ -13,7 +13,7 @@
                     @method('PUT')
                     <div class = "mb-3">
                         <label for="" class = "form-label">Nombre</label>
-                        <input id="name" name="name" pattern="^[A-Za-z]{1,190}$" class="form-control bg-light rounded" tabindex="2" type="text" value="{{$patient->name}}" required>
+                        <input id="name" name="name" pattern="^[A-Za-z\s]{1,190}$" class="form-control bg-light rounded" tabindex="2" type="text" value="{{$patient->name}}" required>
                     </div>
                     <div class = "mb-3">
                         <label for="" class = "form-label">Fecha de nacimiento</label>
@@ -37,7 +37,7 @@
                     </div>
                     <div class = "mb-3">
                         <label for="" class = "form-label">Alergias</label>
-                        <input id="allergies" name="allergies" pattern="^[a-zA-Z0-9]{1,100}$" class="form-control bg-light rounded"" tabindex="3" type="text" value="{{$patient->allergies}}" required>
+                        <input id="allergies" name="allergies" pattern="^[A-Za-z\s]{1,100}$" class="form-control bg-light rounded"" tabindex="3" type="text" value="{{$patient->allergies}}" required>
                     </div>
                     <div class="text-center">
                     <a href="/patients" class = "btn btn-secondary" tabindex ="4">Cancel</a>

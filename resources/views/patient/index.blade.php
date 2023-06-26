@@ -9,6 +9,7 @@
     </x-slot>
 
     <div class="content" style="margin-left: 3rem; margin-right: 3rem">
+    
         <table id="patients" class="table table-striped mt-4" style="width: 100%; font-size: 15px;" cellspacing="0">
             <thead>
                 <tr>
@@ -73,25 +74,40 @@
     <!--ScriptJS to make datatable-->
     <script>
         $(document).ready(function () {
+            
             $('#patients').DataTable({
                 "lengthMenu": [[5, 10, 50, -1], [5, 10, 50, "All"]],
-                "responsive": "true",
+                "responsive": true,
                 "dom": 'Bfrtilp',
+                "searching": true,
                 "buttons": [
                     {
                         extend: 'excelHtml5',
                         text: '<i class="fas fa-file-excel "></i>',
-                        titleAttr: 'Export to excel'
+                        titleAttr: 'Export to excel',
+                        filename: 'Pacientes_precide',
+                        exportOptions: {
+                            columns: ':not(:last-child)' // Especifica las columnas que deseas exportar (índices basados en cero)
+                        },
+                        
                     },
                     {
                         extend: 'pdfHtml5',
                         text: '<i class="fas fa-file-pdf"></i>',
-                        titleAttr: 'Export to pdf'
+                        titleAttr: 'Export to pdf',
+                        filename: 'Pacientes_precide',
+                        exportOptions: {
+                            columns: ':not(:last-child)' // Especifica las columnas que deseas exportar (índices basados en cero)
+                        }
                     },
                     {
                         extend: 'print',
                         text: '<i class="fa fa-print"></i>',
-                        titleAttr: 'Print'
+                        titleAttr: 'Print',
+                        filename: 'Pacientes_precide',
+                        exportOptions: {
+                            columns: ':not(:last-child)' // Especifica las columnas que deseas exportar (índices basados en cero)
+                        }
                     }
 
                 ]
