@@ -26,7 +26,7 @@
                                     <label for="inputPassword6" class="col-form-label">{{$key}}</label>
                                 </div>
                                 <div class="col-sm-5 d-flex align-items-center">
-                                    <input type="text" name="variable{{$key}}" pattern="^[0-9.]{1,10}$" class="form-control bg-light rounded" aria-describedby="passwordHelpInline" required>
+                                    <input type="text"  pattern="[0-9.]{1,10}" name="variable{{$key}}"  class="form-control bg-light rounded" aria-describedby="passwordHelpInline" required>
                                     <button type="button" class="btn btn-primary btn-sm ml-3" style="background-color: #DE4980; border-color: #DE4980;" data-toggle="popover" title="{{$value}}">
                                         <i class="bi bi-question-circle-fill"></i>
                                     </button>

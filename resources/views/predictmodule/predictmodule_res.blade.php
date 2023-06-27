@@ -8,6 +8,24 @@
     <div class="py-12 d-flex justify-content-center">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+
+            @php
+                $band = '';
+                if (isset($result['resultado'])) {
+                    $resultado = $result['resultado'];
+                } else {
+                    $resultado = 'Resultado no encontrado (Api fail)';
+                    $band='Error';
+                }
+
+                if (isset($result['porcentaje'])) {
+                    $porcentaje = $result['porcentaje'];
+                } else {
+                    $porcentaje = 'Porcentaje no encontrado (Api fail)';
+                    $band='Error';
+                }
+            @endphp
+
             <form method="POST" action="{{ route('regitrores') }}">
             @csrf
             <table id="result" class = "table table-striped mt-4 m-5" style="width: 50%; font-size: 16px;" cellspacing="0">
@@ -23,7 +41,7 @@
                                     border: none;
                                     outline: none;
                                     pointer-events: none;"
-                    type="text" name="resultado" value="{{$result['resultado']}}" readonly>
+                    type="text" name="resultado" value="{{$resultado}}" readonly>
                 </td>
                 </tr>
                 <tr>
@@ -33,14 +51,14 @@
                                     border: none;
                                     outline: none;
                                     pointer-events: none;"
-                    type="text" name="porcentaje" value="{{$result['porcentaje']}}" readonly>
+                    type="text" name="porcentaje" value="{{$porcentaje}}" readonly>
                 </td>
                 </tr>
             </tbody>
             <tfoot>
             <!-- Resto de los campos del formulario -->
             <tr>
-                <td colspan="2"><button action="{{ route('regitrores') }}" type="submit" method="POST" class = "btn btn-primary " tabindex ="5" style="background-color: #DE4980; border-color: #DE4980;">Asociar resultados a paciente</button></td>
+                <td colspan="2"><button id="miBoton" action="{{ route('regitrores') }}" type="submit" method="POST" class = "btn btn-primary " tabindex ="5" style="background-color: #DE4980; border-color: #DE4980;">Asociar resultados a paciente</button></td>
             </tr>
             </form>
 
@@ -67,6 +85,14 @@
 </div>
         </div>
     </div>
+    <script>
+        var resultado = '<?php echo $band; ?>'; // Obtener el valor de la variable PHP en JavaScript
+
+        // Verificar si la variable es null y deshabilitar el botón si es el caso
+        if (resultado === 'Error') {
+            document.getElementById("miBoton").disabled = true;
+        }
+    </script>
     <script>
 function submitForm() {
     var resultado = document.getElementById('resultado').value;

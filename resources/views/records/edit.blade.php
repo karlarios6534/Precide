@@ -24,7 +24,7 @@
 
                     <div class="mb-3">
                         <label for="" class="form-label">Comentario</label>
-                        <input id="comentario" name="comentario" pattern="^[a-zA-Z0-9]{1,190}$" class="form-control bg-light rounded" tabindex="3" type="text" value="{{$record->comentario}}">
+                        <input id="comentario" name="comentario" pattern="^[A-Za-z\s]{1,190}$" class="form-control bg-light rounded" tabindex="3" type="text" value="{{$record->comentario}}">
                     </div>
 
                     <div class="mb-3">
