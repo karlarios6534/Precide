@@ -33,6 +33,7 @@ class RecordController extends Controller
             ->get();
         
         return view('records.index')->with('records', $records);
+        
     }
 
     /**

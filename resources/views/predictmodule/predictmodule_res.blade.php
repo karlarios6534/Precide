@@ -30,6 +30,7 @@
             @csrf
             <table id="result" class = "table table-striped mt-4 m-5" style="width: 50%; font-size: 16px;" cellspacing="0">
             <tbody>
+            <input type="hidden" name="values" value="{{$values}}">
                 <tr>
                     <td style="font-weight: bold;">Resultados obtenidos</td>
                     <td></td>

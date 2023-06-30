@@ -25,7 +25,7 @@
                     </div>
                     <div class = "mb-3">
                         <label for="" class = "form-label">Telefono</label>
-                        <input id="phone" name="phone" pattern="^\d{1,15}$" class="form-control bg-light rounded" tabindex="3" type="text" value="{{$patient->phone}}" required>
+                        <input id="phone" name="phone" pattern="^[\d\s+]{1,15}$" class="form-control bg-light rounded" tabindex="3" type="text" value="{{$patient->phone}}" required>
                     </div>
                     <div class = "mb-3">
                         <label for="" class = "form-label">Email</label>
@@ -33,7 +33,7 @@
                     </div>
                     <div class = "mb-3">
                         <label for="" class = "form-label">Contacto de emergencia</label>
-                        <input id="emergency_contact" name="emergency_contact" pattern="^\d{1,15}$" class="form-control bg-light rounded" tabindex="3" type="text" value="{{$patient->emergency_contact}}" required>
+                        <input id="emergency_contact" name="emergency_contact" pattern="^[\d\s+]{1,15}$" class="form-control bg-light rounded" tabindex="3" type="text" value="{{$patient->emergency_contact}}" required>
                     </div>
                     <div class = "mb-3">
                         <label for="" class = "form-label">Alergias</label>

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Patient;
@@ -85,11 +87,8 @@ class PredictController extends Controller
         
         $response = Http::timeout(300)->withoutVerifying()->get("https://precide.onrender.com/" . $valuesString);
 
-        // Hacer algo con la cadena de valores concatenados
-        // ...
-        
-        // Devolver una respuesta
-        return view('predictmodule/predictmodule_res')->with('result', $response);
+        $values = $valuesString;
+        return view('predictmodule/predictmodule_res')->with('result', $response)->with('values', $valuesString);
     }
 
     public function register(Request $request1)
@@ -102,10 +101,11 @@ class PredictController extends Controller
         // Acceder a los valores del objeto JSON
         $resultado = $jsonString->resultado;
         $porcentaje = $jsonString->porcentaje;
+        $values = $jsonString->values;
 
         $patients= Patient::all();
 
-        return view('predictmodule/predictmodule_register',['resultado' => $resultado, 'porcentaje' => $porcentaje, 'patients' => $patients]);
+        return view('predictmodule/predictmodule_register',['resultado' => $resultado, 'porcentaje' => $porcentaje, 'patients' => $patients, 'values' => $values]);
     }
 
     public function save(Request $request)
@@ -116,6 +116,7 @@ class PredictController extends Controller
       $record->prediccion = $request->get('resultado');
       $record->veracidad = $request->get('porcentaje');
       $record->comentario = $request->get('comentario');
+      $values = $request->get('values');
       $record->date = date('Y-m-d'); 
 
       $record->save();
@@ -125,6 +126,37 @@ class PredictController extends Controller
       
       $records = Record::with('patient','user')->get();
       
+      
+        // Dividir el string en un array utilizando la coma como delimitador
+        $arrayValores = explode(',', $values);
+
+        // Crear una instancia del objeto Spreadsheet
+        $spreadsheet = new Spreadsheet();
+
+        // Obtener la hoja activa
+        $sheet = $spreadsheet->getActiveSheet();
+
+        // Guardar cada valor en una celda separada
+        for ($i = 0; $i < count($arrayValores); $i++) {
+            // Acceder a cada valor individualmente
+            $valor = $arrayValores[$i];
+            
+            // Establecer el valor en la celda correspondiente
+            $sheet->setCellValueByColumnAndRow($i + 1, 1, $valor);
+        }
+
+        $rutaExcel = public_path('excel');
+
+        // Crear el directorio "public/excel" si no existe
+        if (!file_exists($rutaExcel)) {
+            mkdir($rutaExcel, 0755, true);
+        }
+        
+        // Guardar el archivo Excel en la ruta especificada
+        $archivoExcel = $rutaExcel . '/valores.xlsx';
+        $writer = new Xlsx($spreadsheet);
+        $writer->save($archivoExcel);
+
       // Filtrar los registros por fecha dentro del rango de la semana actual
       
       return view('records.index')->with('records', $records);

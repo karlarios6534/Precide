@@ -11,7 +11,7 @@
             <form id="myForm" action="{{ route('apiregister')}}" method="POST">
             @csrf
             <div class="row g-3 align-items-center m-1">
-
+            <input type="hidden" name="values" value="{{$values}}">
                 <div class="col-sm-6 m-4" style="background-color:#F2F3F5; border-radius: 10px; width:80%">
                 <div class="col-sm-3">
                 <label for="inputPassword6" class="col-form-label">Resultado</label>
