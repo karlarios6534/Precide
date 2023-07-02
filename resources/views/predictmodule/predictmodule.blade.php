@@ -3,6 +3,12 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
         {{ __('Predict') }}
         </h2>
+        @if (session('error'))
+            <p style="width:50%;background-color: #f8d7da; color: #721c24; padding: 10px; border: 1px solid #f5c6cb; border-radius: 4px; margin-bottom: 10px;">
+                {{ session('error') }}
+            </p>
+        @endif
+
     </x-slot>
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 mt-4">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg mb-5">

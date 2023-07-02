@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
+    <script src="https://kit.fontawesome.com/0395bf88e1.js" crossorigin="anonymous"></script>
+
           <!-- Favicons -->
         <link rel="icon" type="image/x-icon" href="assets/img/logo_pre.png">
         <meta charset="utf-8">

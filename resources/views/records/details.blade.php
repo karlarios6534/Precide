@@ -34,8 +34,8 @@
                     <td>
                         <form action="{{ route('record.destroy_id',$record->id)}}" method="POST">
                             @csrf
-                            <a href="/record/{{$record->id}}/edit" class="btn btn-info">Editar</a>
-                            <button class="btn btn-danger">Delete</button>
+                            <a href="/record/{{$record->id}}/edit" class="btn btn-info"><i class="fa-regular fa-pen-to-square" style="color: #000000;"></i></a>
+                            <button class="btn btn-danger"><i class="fa-solid fa-trash" style="color: #000000;"></i></button>
                         </form>
                     </td>
                 </tr>

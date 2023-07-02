@@ -13,7 +13,7 @@
                     @method('PUT')
                     <div class = "mb-3">
                         <label for="" class = "form-label">Nombre</label>
-                        <input id="name" name="name" pattern="^[A-Za-z\s]{1,190}$" class="form-control bg-light rounded" tabindex="2" type="text" value="{{$patient->name}}" required>
+                        <input id="name" name="name" pattern="^[A-Za-zñÑ\s]{1,190}$" class="form-control bg-light rounded" tabindex="2" type="text" value="{{$patient->name}}" required>
                     </div>
                     <div class = "mb-3">
                         <label for="" class = "form-label">Fecha de nacimiento</label>
@@ -37,14 +37,14 @@
                     </div>
                     <div class = "mb-3">
                         <label for="" class = "form-label">Alergias</label>
-                        <input id="allergies" name="allergies" pattern="^[A-Za-z\s]{1,100}$" class="form-control bg-light rounded"" tabindex="3" type="text" value="{{$patient->allergies}}" required>
+                        <input id="allergies" name="allergies" pattern="^[A-Za-zñÑ\s]{1,190}$" class="form-control bg-light rounded"" tabindex="3" type="text" value="{{$patient->allergies}}" required>
                     </div>
                     <div class="text-center">
-                    <a href="/patients" class = "btn btn-secondary" tabindex ="4">Cancel</a>
-                    <button type="submit" class = "btn btn-primary" tabindex ="5" style="background-color: #DE4980; border-color: #DE4980;">Save</button>
+                    <a href="/patients" class = "btn btn-secondary" tabindex ="4">Cancelar</a>
+                    <button type="submit" class = "btn btn-primary" tabindex ="5" style="background-color: #DE4980; border-color: #DE4980;">Guardar</button>
                     </div>     
                 </form>
             </div>
-        </div>
+        </div> 
     </div>
 </x-app-layout>

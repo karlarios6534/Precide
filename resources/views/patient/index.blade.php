@@ -40,12 +40,12 @@
                     <td>{{$patient->email}}</td>
                     <td>{{$patient->emergency_contact}}</td>
                     <td>{{$patient->allergies}}</td>
-                    <td style="width:15%">
+                    <td style="width:10%">
                         <form action="{{ route('patients.destroy',$patient->id)}}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <a href="/patients/{{$patient->id}}/edit" class="btn btn-info">Edit</a>
-                            <button class="btn btn-danger">Delete</button>
+                            <a href="/patients/{{$patient->id}}/edit" class="btn btn-info"><i class="fa-regular fa-pen-to-square" style="color: #000000;"></i></a>
+                            <button class="btn btn-danger"><i class="fa-solid fa-trash" style="color: #000000;"></i></button>
                         </form>
                     </td>
                 </tr>
@@ -88,8 +88,7 @@
                         filename: 'Pacientes_precide',
                         exportOptions: {
                             columns: ':not(:last-child)' // Especifica las columnas que deseas exportar (índices basados en cero)
-                        },
-                        
+                        }
                     },
                     {
                         extend: 'pdfHtml5',

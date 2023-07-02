@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Record;
+use App\Models\Value;
 
 class RecordController extends Controller
 {
@@ -31,8 +32,11 @@ class RecordController extends Controller
                     ->groupBy('patient_id');
             })
             ->get();
-        
-        return view('records.index')->with('records', $records);
+        $values= Value::all();
+        return view('records.index')->with([
+            'records' => $records,
+            'values' => $values
+        ]);
         
     }
 

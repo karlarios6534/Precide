@@ -4,7 +4,7 @@
 
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-
+  <script src="https://kit.fontawesome.com/0395bf88e1.js" crossorigin="anonymous"></script>
   <!-- Favicons -->
   <link rel="icon" type="image/x-icon" href="assets/img/logo_pre.png">
 

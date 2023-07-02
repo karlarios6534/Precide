@@ -1,8 +1,13 @@
 <x-app-layout>
     <x-slot name="header">
+
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Historial') }}
         </h2>
+        <div>
+    <button id="exportar-btn">Exportar Dataset <i class="fa-solid fa-download" style="color: #de4980;"></i></button>
+    </div>
+
     </x-slot>
     <div class = "content" style="margin-left : 3rem; margin-right : 3rem">
     <table id="records" class = "table table-striped mt-4" style="width: 100%; font-size: 15px;" cellspacing="0">
@@ -28,12 +33,12 @@
                 <td>{{$record->veracidad}}</td>
                 <td>{{$record->comentario}}</td>
                 <td>{{$record->date}}</td>
-                <td style="width:15%">
+                <td style="width:10%">
                 <form action="{{ route('record.destroy',$record->patient->id)}}" method = "POST">
                     @csrf
                     @method('DELETE')
-                <a href="/record/{{$record->patient->id}}/details"class = "btn btn-info">Detalles</a>
-                <button class = "btn btn-danger">Delete</button>
+                <a href="/record/{{$record->patient->id}}/details"class = "btn btn-info"><i class="fa-solid fa-circle-info" style="color: #000000;"></i></a>
+                <button class = "btn btn-danger"><i class="fa-solid fa-trash" style="color: #000000;"></i></button>
                 </form>
                 </td>
             </tr>
@@ -43,6 +48,8 @@
 </div>
 
 <!-- ScriptJS to use datatables properties -->
+<script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.13.2/js/dataTables.bootstrap5.min.js"></script>
@@ -59,6 +66,28 @@
 <!--ScriptJS to use iconns from fontawesome-->
 <script src="https://kit.fontawesome.com/0395bf88e1.js" crossorigin="anonymous"></script>
 <!--ScriptJS to make datatable-->
+<script>
+    document.getElementById('exportar-btn').addEventListener('click', function() {
+    // Obtener los datos de los valores
+    const valores = {!! $values !!};
+
+    // Crear el libro de trabajo y la hoja de cálculo
+    const workbook = XLSX.utils.book_new();
+    const worksheet = XLSX.utils.json_to_sheet(valores);
+
+    // Agregar la hoja de cálculo al libro de trabajo
+    XLSX.utils.book_append_sheet(workbook, worksheet, 'Valores');
+
+    // Generar el archivo Excel
+    const excelBuffer = XLSX.write(workbook, { bookType: 'xlsx', type: 'array' });
+
+    // Descargar el archivo Excel
+    const blob = new Blob([excelBuffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+    const fileName = 'valores.xlsx';
+    saveAs(blob, fileName);
+});
+
+</script>
 <script>
 $(document).ready(function () {
     $('#records').DataTable({
