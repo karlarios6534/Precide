@@ -8,9 +8,20 @@
     <div class="content" style="margin-left: 3rem; margin-right: 3rem">
         @if (!$records->isEmpty())
         <br>
-        <div style="background-color: white; display: inline-block;">
-            <h1 id="patientname" class="display-8 text-primary mb-4">Paciente {{$records[0]->patient->name}}</h1>
-            <h1 id="username" class="display-8 text-success">Medico {{$records[0]->user->name}}</h1>
+        <div class=" d-flex flex-wrap">
+            <h1 id="patientname" class="card-title mr-3">Páciente: {{ $records[0]->patient->name }}</h1>
+            <h2 class="card-tittle mr-3">Médico(s): </h2>
+            @php
+            $previousName = null;
+            @endphp
+            @foreach ($records as $record)
+            @if ($record->user->name !== $previousName)
+                <h1 id="username" class="text-success mr-3">·{{ $record->user->name }}</h1>
+                @php
+                $previousName = $record->user->name;
+                @endphp
+            @endif
+            @endforeach
         </div>
         @endif
 
@@ -31,11 +42,11 @@
                     <td>{{$record->veracidad}}</td>
                     <td>{{$record->comentario}}</td>
                     <td>{{$record->date}}</td>
-                    <td>
+                    <td style="width:10%">
                         <form action="{{ route('record.destroy_id',$record->id)}}" method="POST">
                             @csrf
-                            <a href="/record/{{$record->id}}/edit" class="btn btn-info"><i class="fa-regular fa-pen-to-square" style="color: #000000;"></i></a>
-                            <button class="btn btn-danger"><i class="fa-solid fa-trash" style="color: #000000;"></i></button>
+                            <a href="/record/{{$record->id}}/edit" class="btn btn-info"><i class="fa-regular fa-pen-to-square" style="color: #FFFFFF;"></i></a>
+                            <button class="btn btn-danger"><i class="fa-solid fa-trash" style="color: #FFFFFF;"></i></button>
                         </form>
                     </td>
                 </tr>
@@ -82,7 +93,6 @@
 <script>
 $(document).ready(function () {
     var patientName = document.getElementById('patientname').textContent;
-    var username = document.getElementById('username').textContent;
 
     $('#records').DataTable({
         "lengthMenu" : [[5,10,50,-1],[5,10,50,"All"]],
@@ -97,7 +107,14 @@ $(document).ready(function () {
                 filename: patientName,
                 exportOptions: {
                     columns: ':not(:last-child)' // Especifica las columnas que deseas exportar (índices basados en cero)
-                }
+                },
+                init: function(api, node, config) {
+                            $(node).removeClass('btn-secondary'); // Elimina la clase CSS predeterminada del botón
+                            $(node).addClass('btn-custom'); // Agrega la clase CSS personalizada al botón
+                            $(node).css('background-color', '#5bc0de'); // Cambia el color de fondo del botón
+                            $(node).css('color', '#ffffff'); // Cambia el color del texto del botón
+                            // Agrega otros estilos personalizados según tus necesidades
+                            }
             },
             {
                 extend: 'pdfHtml5',
@@ -106,7 +123,14 @@ $(document).ready(function () {
                 filename: patientName,
                 exportOptions: {
                     columns: ':not(:last-child)' // Especifica las columnas que deseas exportar (índices basados en cero)
-                }
+                },
+                init: function(api, node, config) {
+                            $(node).removeClass('btn-secondary'); // Elimina la clase CSS predeterminada del botón
+                            $(node).addClass('btn-custom'); // Agrega la clase CSS personalizada al botón
+                            $(node).css('background-color', '#5bc0de'); // Cambia el color de fondo del botón
+                            $(node).css('color', '#ffffff'); // Cambia el color del texto del botón
+                            // Agrega otros estilos personalizados según tus necesidades
+                            }
             },
             {
                 extend: 'print',
@@ -115,7 +139,14 @@ $(document).ready(function () {
                 filename: patientName,
                 exportOptions: {
                     columns: ':not(:last-child)' // Especifica las columnas que deseas exportar (índices basados en cero)
-                }
+                },
+                init: function(api, node, config) {
+                            $(node).removeClass('btn-secondary'); // Elimina la clase CSS predeterminada del botón
+                            $(node).addClass('btn-custom'); // Agrega la clase CSS personalizada al botón
+                            $(node).css('background-color', '#5bc0de'); // Cambia el color de fondo del botón
+                            $(node).css('color', '#ffffff'); // Cambia el color del texto del botón
+                            // Agrega otros estilos personalizados según tus necesidades
+                            }
             }
             
         ]

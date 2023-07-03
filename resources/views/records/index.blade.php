@@ -10,6 +10,7 @@
 
     </x-slot>
     <div class = "content" style="margin-left : 3rem; margin-right : 3rem">
+    <br>
     <table id="records" class = "table table-striped mt-4" style="width: 100%; font-size: 15px;" cellspacing="0">
         <thead>
             <tr>
@@ -37,8 +38,8 @@
                 <form action="{{ route('record.destroy',$record->patient->id)}}" method = "POST">
                     @csrf
                     @method('DELETE')
-                <a href="/record/{{$record->patient->id}}/details"class = "btn btn-info"><i class="fa-solid fa-circle-info" style="color: #000000;"></i></a>
-                <button class = "btn btn-danger"><i class="fa-solid fa-trash" style="color: #000000;"></i></button>
+                <a href="/record/{{$record->patient->id}}/details"class = "btn btn-info"><i class="fa-solid fa-circle-info" style="color: #FFFFFF;"></i></a>
+                <button class = "btn btn-danger"><i class="fa-solid fa-trash" style="color: #FFFFFF;"></i></button>
                 </form>
                 </td>
             </tr>
@@ -103,7 +104,14 @@ $(document).ready(function () {
                 filename: 'Registros_precide',
                 exportOptions: {
                     columns: ':not(:last-child)' // Especifica las columnas que deseas exportar (índices basados en cero)
-                }
+                },
+                init: function(api, node, config) {
+                            $(node).removeClass('btn-secondary'); // Elimina la clase CSS predeterminada del botón
+                            $(node).addClass('btn-custom'); // Agrega la clase CSS personalizada al botón
+                            $(node).css('background-color', '#5bc0de'); // Cambia el color de fondo del botón
+                            $(node).css('color', '#ffffff');// Cambia el color del texto del botón
+                            // Agrega otros estilos personalizados según tus necesidades
+                            }
             },
             {
                 extend: 'pdfHtml5',
@@ -112,7 +120,14 @@ $(document).ready(function () {
                 filename: 'Registros_precide',
                 exportOptions: {
                     columns: ':not(:last-child)' // Especifica las columnas que deseas exportar (índices basados en cero)
-                }
+                },
+                init: function(api, node, config) {
+                            $(node).removeClass('btn-secondary'); // Elimina la clase CSS predeterminada del botón
+                            $(node).addClass('btn-custom'); // Agrega la clase CSS personalizada al botón
+                            $(node).css('background-color', '#5bc0de'); // Cambia el color de fondo del botón
+                            $(node).css('color', '#ffffff');// Cambia el color del texto del botón
+                            // Agrega otros estilos personalizados según tus necesidades
+                            }
             },
             {
                 extend: 'print',
@@ -121,7 +136,14 @@ $(document).ready(function () {
                 filename: 'Registros_precide',
                 exportOptions: {
                     columns: ':not(:last-child)' // Especifica las columnas que deseas exportar (índices basados en cero)
-                }
+                },
+                init: function(api, node, config) {
+                            $(node).removeClass('btn-secondary'); // Elimina la clase CSS predeterminada del botón
+                            $(node).addClass('btn-custom'); // Agrega la clase CSS personalizada al botón
+                            $(node).css('background-color', '#5bc0de'); // Cambia el color de fondo del botón
+                            $(node).css('color', '#ffffff');// Cambia el color del texto del botón
+                            // Agrega otros estilos personalizados según tus necesidades
+                            }
             }
             
         ]

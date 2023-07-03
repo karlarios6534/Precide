@@ -22,7 +22,7 @@ class DashController extends Controller
 // Número de pacientes registrados esta semana
         $inicioSemana = Carbon::now()->startOfWeek();
         $finSemana = Carbon::now()->endOfWeek();
-        $pacientesRegistradosSemana = Patient::whereBetween('created_at', [$inicioSemana, $finSemana])->count();
+        $recordsRegistradosSemana = Record::whereBetween('created_at', [$inicioSemana, $finSemana])->count();
 
         // Obtener datos para los gráficos
         $pacientesData = [
@@ -63,7 +63,7 @@ class DashController extends Controller
         ];
         
     
-        return view('dashboard', compact('pacientesData', 'medicosData', 'prediccionesData', 'recordsData', 'totalPacientes', 'pacientesRegistradosSemana'));
+        return view('dashboard', compact('pacientesData', 'medicosData', 'prediccionesData', 'recordsData', 'totalPacientes', 'recordsRegistradosSemana'));
     }
     
 }
