@@ -14,7 +14,7 @@
                 <div>
                     <p class="mb-0 text-secondary">Total de pacientes.</p>
                     <h4 class="my-1 text-info">{{$totalPacientes}}</h4>
-                    <p class="mb-0 text-secondary">Total de registros esta semana.</p>
+                    <p class="mb-0 text-secondary">Total de registros <span style="color: green;"><?php echo ucfirst(Carbon\Carbon::now()->locale('es')->isoFormat('MMMM')); ?>.</span></p>
                     <p class="mb-0 font-13">{{$recordsRegistradosSemana}}</p>
                 </div>
                 <div class="widgets-icons-2 rounded-circle bg-gradient-scooter text-white">

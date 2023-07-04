@@ -20,8 +20,8 @@ class DashController extends Controller
         $totalPacientes = Patient::count();
 
 // Número de pacientes registrados esta semana
-        $inicioSemana = Carbon::now()->startOfWeek();
-        $finSemana = Carbon::now()->endOfWeek();
+        $inicioSemana = Carbon::now()->startOfMonth();
+        $finSemana = Carbon::now()->endOfMonth();
         $recordsRegistradosSemana = Record::whereBetween('created_at', [$inicioSemana, $finSemana])->count();
 
         // Obtener datos para los gráficos

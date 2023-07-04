@@ -37,7 +37,7 @@
                     </div>
                     <div class = "mb-3">
                         <label for="" class = "form-label">Alergias</label>
-                        <input id="allergies" name="allergies" pattern="^[A-Za-zñÑ\s]{1,190}$" class="form-control bg-light rounded"" tabindex="3" type="text" value="{{$patient->allergies}}" required>
+                        <input id="allergies" name="allergies" pattern="^[A-Za-zñÑ\s.,]{1,190}$" class="form-control bg-light rounded"" tabindex="3" type="text" value="{{$patient->allergies}}" required>
                     </div>
                     <div class="text-center">
                     <a href="/patients" class = "btn btn-secondary" tabindex ="4">Cancelar</a>
