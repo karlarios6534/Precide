@@ -21,58 +21,59 @@ class PredictController extends Controller
     
     public function index(){
 
-        $elements = [
-            [
-              "Radio Promedio" => "Promedio de los radios de las células en el núcleo de la masa mamaria.",
-              "Radio SE" => "Error estándar.",
-              "Radio Worst" => "Valor más grande encontrado."
-            ],
-            [
-              "Textura Promedio" => "Desviación estándar de los valores de la escala de grises en la imagen de la masa mamaria.",
-              "Textura SE" => "Error estándar.",
-              "Textura Worst" => "Valor más grande encontrado."
-            ],
-            [
-              "Perímetro Promedio" => " Perímetro promedio de las células en el núcleo de la masa mamaria.",
-              "Perímetro SE" => "Error estándar.",
-              "Perímetro Worst" => "Valor más grande encontrado."
-            ],
-            [
-              "Área Promedio" => "Área promedio de las células en el núcleo de la masa mamaria.",
-              "Área SE" => "Error estándar.",
-              "Área Worst" => "Valor más grande encontrado."
-            ],
-            [
-              "Suavidad Promedio" => "Variación local en las longitudes de los radios de las células en el núcleo de la masa mamaria.",
-              "Suavidad SE" => "Error estándar.",
-              "Suavidad Worst" => "Valor más grande encontrado."
-            ],
-            [
-              "Compacidad Promedio" => "Perímetro al cuadrado dividido por el área menos 1.0.",
-              "Compacidad SE" => "Error estándar.",
-              "Compacidad Worst" => "Valor más grande encontrado."
-            ],
-            [
-              "Concavidad Promedio" => "Severidad de las porciones cóncavas del contorno del núcleo de la masa mamaria.",
-              "Concavidad SE" => "Error estándar.",
-              "Concavidad Worst" => "Valor más grande encontrado."
-            ],
-            [
-              "Puntos Cóncavos Promedio" => "Número de porciones cóncavas del contorno del núcleo de la masa mamaria.",
-              "Puntos Cóncavos SE" => "Error estándar.",
-              "Puntos Cóncavos Worst" => "Valor más grande encontrado."
-            ],
-            [
-              "Simetría Promedio" => "Simetría del contorno del núcleo de la masa mamaria.",
-              "Simetría SE" => "Error estándar.",
-              "Simetría Worst" => "Valor más grande encontrado."
-            ],
-            [
-              "Dimensión Fractal Promedio" => "Dimensión fractal 'coastline approximation' del contorno del núcleo de la masa mamaria.",
-              "Dimensión Fractal SE" => "Error estándar.",
-              "Dimensión Fractal Worst" => "Valor más grande encontrado."
-            ]
-          ];
+      $elements = [
+        [
+            "Radio Promedio" => "Promedio de los radios de las células en el núcleo de la masa mamaria.",
+            "Radio SE" => "Error estándar.",
+            "Peor Radio" => "Valor más grande encontrado."
+        ],
+        [
+            "Textura Promedio" => "Desviación estándar de los valores de la escala de grises en la imagen de la masa mamaria.",
+            "Textura SE" => "Error estándar.",
+            "Peor Textura" => "Valor más grande encontrado."
+        ],
+        [
+            "Perímetro Promedio" => "Perímetro promedio de las células en el núcleo de la masa mamaria.",
+            "Perímetro SE" => "Error estándar.",
+            "Peor Perímetro" => "Valor más grande encontrado."
+        ],
+        [
+            "Área Promedio" => "Área promedio de las células en el núcleo de la masa mamaria.",
+            "Área SE" => "Error estándar.",
+            "Peor Área" => "Valor más grande encontrado."
+        ],
+        [
+            "Suavidad Promedio" => "Variación local en las longitudes de los radios de las células en el núcleo de la masa mamaria.",
+            "Suavidad SE" => "Error estándar.",
+            "Peor Suavidad" => "Valor más grande encontrado."
+        ],
+        [
+            "Compacidad Promedio" => "Perímetro al cuadrado dividido por el área menos 1.0.",
+            "Compacidad SE" => "Error estándar.",
+            "Peor Compacidad" => "Valor más grande encontrado."
+        ],
+        [
+            "Concavidad Promedio" => "Severidad de las porciones cóncavas del contorno del núcleo de la masa mamaria.",
+            "Concavidad SE" => "Error estándar.",
+            "Peor Concavidad" => "Valor más grande encontrado."
+        ],
+        [
+            "Puntos Cóncavos Promedio" => "Número de porciones cóncavas del contorno del núcleo de la masa mamaria.",
+            "Puntos Cóncavos SE" => "Error estándar.",
+            "Peor Puntos Cóncavos" => "Valor más grande encontrado."
+        ],
+        [
+            "Simetría Promedio" => "Simetría del contorno del núcleo de la masa mamaria.",
+            "Simetría SE" => "Error estándar.",
+            "Peor Simetría" => "Valor más grande encontrado."
+        ],
+        [
+            "Dimensión Fractal Promedio" => "Dimensión fractal 'coastline approximation' del contorno del núcleo de la masa mamaria.",
+            "Dimensión Fractal SE" => "Error estándar.",
+            "Peor Dimensión Fractal" => "Valor más grande encontrado."
+        ]
+    ];
+    
                  
         return view('predictmodule/predictmodule', ['elements' => $elements]);
     }

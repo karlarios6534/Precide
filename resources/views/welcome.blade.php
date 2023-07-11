@@ -67,10 +67,10 @@
                     @auth
                         <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
                     @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
+                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Iniciar sesión</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
+                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Registrate</a>
                         @endif
                     @endauth
                 </div>
@@ -84,7 +84,7 @@
     <div class="container d-flex flex-column justify-content-center align-items-center text-center position-relative" data-aos="zoom-out">
       <img src="assets/img/hero-carousel/celulas.png" class="img-fluid animated" style="width:20%">
       <h2>Bienvenido a <span>Precide</span></h2>
-      <p>Precide es una plataforma de control de historial y seguimeinto de pacientes con riesgo de cancer de mama.</p>
+      <p>Precide es una plataforma de control de historial y seguimiento de pacientes con riesgo de cáncer de mama.</p>
       <div class="d-flex">
         <a href="{{ url('/login') }}" class="btn-get-started scrollto" style="background-color: #DE4980">Comenzar!</a>
         <a href="https://www.youtube.com/watch?v=99llpcsco6g" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle" ></i><span>Ver video</span></a>
@@ -104,7 +104,7 @@
             <div class="service-item position-relative">
               <div class="icon"><i class="bi bi-activity icon"></i></div>
               <h4><a href="" class="stretched-link">Gestion</a></h4>
-              <p>Registra a tus pacientes y ten un control de su historial medico,</p>
+              <p>Registra a tus pacientes y ten un control de su historial medico.</p>
             </div>
           </div><!-- End Service Item -->
 
@@ -127,7 +127,7 @@
           <div class="col-xl-3 col-md-6 d-flex" data-aos="zoom-out" data-aos-delay="600">
             <div class="service-item position-relative">
               <div class="icon"><i class="bi bi-broadcast icon"></i></div>
-              <h4><a href="" class="stretched-link">Comunicaccion</a></h4>
+              <h4><a href="" class="stretched-link">Comunicación</a></h4>
               <p>Mantente siempre conectado con Precide.</p>
             </div>
           </div><!-- End Service Item -->
@@ -143,7 +143,7 @@
 
         <div class="section-header">
           <h2>Acerca de nosotros</h2>
-          <p>Con Precide queremos ayudar a los medicos a que tengan un control en su trabajo, de una manera mas sencilla y rapida, con ayuda de la tecnologia y machine learning.</p>
+          <p>Con Precide queremos ayudar a los médicos a que tengan un control en su trabajo, de una manera más sencilla y rápida, con ayuda de la tecnología y machine learning.</p>
         </div>
 
         <div class="row g-4 g-lg-5" data-aos="fade-up" data-aos-delay="200">
@@ -155,12 +155,12 @@
           </div>
 
           <div class="col-lg-7">
-            <h3 class="pt-0 pt-lg-5">Tener un historial de los avances del tumor de un paciente con riesgo de cancer de mama es crucial.</h3>
+            <h3 class="pt-0 pt-lg-5">Tener un historial de los avances del tumor de un paciente con riesgo de cáncer de mama es crucial.</h3>
 
             <!-- Tabs -->
             <ul class="nav nav-pills mb-3">
-              <li><a class="nav-link active" data-bs-toggle="pill" href="#tab1">Caracteristicas para tomar en cuenta un tumor en el seno</a></li>
-              <li><a class="nav-link" data-bs-toggle="pill" href="#tab2">Importancia historica</a></li>
+              <li><a class="nav-link active" data-bs-toggle="pill" href="#tab1">Características para tomar en cuenta un tumor en el seno</a></li>
+              <li><a class="nav-link" data-bs-toggle="pill" href="#tab2">Importancia histórica</a></li>
             </ul><!-- End Tabs -->
 
             <!-- Tab Content -->
@@ -176,7 +176,7 @@
 
                 <div class="d-flex align-items-center mt-4">
                   <i class="bi bi-check2"></i>
-                  <h4>Forma y contorno del tumo</h4>
+                  <h4>Forma y contorno del tumor</h4>
                 </div>
                 <p>Los tumores malignos tienen formas irregulares y contornos asimétricos, mientras que los tumores benignos son más redondeados y regulares.</p>
 
@@ -230,7 +230,7 @@
           <li class="nav-item col-6 col-md-4 col-lg-2">
             <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-3">
               <i class="bi bi-filetype-ai color-teal"></i>
-              <h4>Prediccion</h4>
+              <h4>Predicción</h4>
             </a>
           </li><!-- End Tab 3 Nav -->
 
@@ -249,7 +249,7 @@
               <div class="col-lg-8 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="100">
                 <h3>Dashboard</h3>
                 <p class="fst-italic">
-                  En este apartado podras ver de manera grafica los detalles en general de tu cuenta (pacientes, historial, predicciones).
+                En este apartado podrás ver de manera grafica los detalles en general de tu cuenta (pacientes, historial, predicciones).
                 </p>
                 <ul>
                   <li><i class="bi bi-check-circle-fill"></i> Visualización de datos clara y atractiva para facilitar el análisis.</li>
@@ -334,8 +334,8 @@
       <div class="container">
 
         <div class="section-header">
-          <h2>Contact Us</h2>
-          <p>Puedes contactarnos por nuestras redes sociales para saber mas de Precide!.</p>
+          <h2>Contáctanos</h2>
+          <p>Puedes contactarnos por nuestras redes sociales para saber mas de Precide!</p>
           <br>
         <a href="mailto:karla.rios6534@alumnos.udg.mx">
             <i class="bi bi-envelope-fill color-cyan">karla.rios6534@alumons.udg.mx</i>
